@@ -23,7 +23,13 @@ module.exports = {
                     800: '#181E35',
                     900: '#0F1220',
                 }
+            }, 
+            fontSize: {
+                xxs: '0.675rem',
             },
+            lineHeight: {
+                tighter: '1.125',
+            }, 
             fontFamily: {
                 sans: [
                     '-apple-system',
@@ -54,12 +60,14 @@ module.exports = {
                     '"Courier New"',
                     'monospace',
                 ],
-            },
-            fontSize: {
-                xxs: '0.675rem',
-            },
-            lineHeight: {
-                tighter: '1.125',
+                latoeg: [
+                    'Lato',
+                    'sans-serif'
+                ],
+                cooperhewitteg: [
+                    'CooperHewitt-Medium',
+                    'arial'
+                ]
             }
         }
         

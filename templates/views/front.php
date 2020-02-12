@@ -3,10 +3,33 @@
     
    <div class="max-w-6xl m-auto  shadow">  
          <img  class="w-full " src="https://d2fc2l3thsf47o.cloudfront.net/images/e-content-banner.jpg" alt="">   
-        <div  class="py-4 px-6" >
-            <h1 class="text-5xl font-bold ">CONGRESO DE SECRETARIA</h1>
-            <h1 class="mb-2 mt-4" >Contenido Principal</h1>
-            <h2  class="font-sans" >Hola soy el dos</h2>
+       
+        <div class="flex">
+            <div class="w-2/3">
+                 <h1 class="font-sans" >Contenido Principal 1</h1>
+                <h2  class="font-sans" >Contenido Principal 2</h2>
+                <h3  class="font-sans" >Contenido Principal 3</h3>
+                <h4  class="font-sans" >Contenido Principal 4</h4>     
+                <h5  class="font-sans" >Contenido Principal 5</h5>
+            </div>
+            <div class="w-1/3 p-4">
+                  <article  class="rounded shadow overflow-hidden" > 
+                    <a href="#">
+                    <figure>
+                        <img src="https://i.ytimg.com/vi/x_JbIl9SS0E/maxresdefault.jpg" alt="">
+                    </figure> 
+                    <div  class="p-6" >
+                        <h1>Title</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <p>Lorem ipsum dolor sit amet. dw</p>
+                    </div>
+                    </a>
+                  </article>
+            </div>
+        </div>
+        <div  class="py-4 px-6" > 
+           
+
             <p  class="mt-0 mb-1" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque ut vel placeat accusamus porro soluta molestias impedit quasi suscipit, quod quam pariatur, odit iusto laboriosam ratione repudiandae. Consequuntur, deserunt quisquam.</p>
             <span  class="text-xs block mb-5 mt-1 italic" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, qui cupiditate recusandae cum cumque dolorum obcaecati facere tempore autem aliquam dolorem? Optio tempore, nihil totam in fugiat suscipit consequatur doloribus.</span>
             <button class="bg-blue-600 text-white px-6 py-3 rounded " >Registrarse Aqui</button> 

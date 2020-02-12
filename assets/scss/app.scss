@@ -1,21 +1,30 @@
 // @import "assets/font/font";
+
+@import "~tailwindcss/base"; 
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
+@font-face {
+    font-family: 'CooperHewitt-Medium';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CooperHewitt-Medium'), local('CooperHewitt-Medium'),
+        url(https://static.platzi.com/bff/assets/cooperhewitt-medium-webfont-a23aeab68bbdc1b3f571ac216af5f59a.woff2) format('woff');
+}
+@font-face {
+    font-family: 'CooperHewitt-Medium';
+    font-style: normal;
+    font-weight: 600;
+    src: local('CooperHewitt-Medium'), local('CooperHewitt-Medium'),
+        url(https://static.platzi.com/bff/assets/cooperhewitt-semibold-webfont-b569525507c54a3580a45a27ce53205a.woff2) format('woff');
+}
+
 @import "partials/base";
 @import "lib/mixins";
-@import "~tailwindcss/base"; 
 @import "partials/animations";
-@import "~tailwindcss/components";
 @import "partials/components";
-@import "~tailwindcss/utilities";
 @import "partials/utilities"; 
 @import "layout/header"; 
 
 
-// @font-face {
-//     font-family: 'CooperHewitt-Medium';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: local('CooperHewitt-Medium'), local('CooperHewitt-Medium'),
-//         url(http://allfont.ru/cache/fonts/cooperhewitt-medium_66df7ab95b1c780b6d6e580f9d6cdb32.woff) format('woff'),
-//         url(http://allfont.ru/cache/fonts/cooperhewitt-medium_66df7ab95b1c780b6d6e580f9d6cdb32.ttf) format('truetype');
-// }
-  
+
