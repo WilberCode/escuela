@@ -1,6 +1,7 @@
-@import "lib/mixins";
-@import "~tailwindcss/base";
+// @import "assets/font/font";
 @import "partials/base";
+@import "lib/mixins";
+@import "~tailwindcss/base"; 
 @import "partials/animations";
 @import "~tailwindcss/components";
 @import "partials/components";
@@ -9,4 +10,12 @@
 @import "layout/header"; 
 
 
- 
+// @font-face {
+//     font-family: 'CooperHewitt-Medium';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: local('CooperHewitt-Medium'), local('CooperHewitt-Medium'),
+//         url(http://allfont.ru/cache/fonts/cooperhewitt-medium_66df7ab95b1c780b6d6e580f9d6cdb32.woff) format('woff'),
+//         url(http://allfont.ru/cache/fonts/cooperhewitt-medium_66df7ab95b1c780b6d6e580f9d6cdb32.ttf) format('truetype');
+// }
+  
