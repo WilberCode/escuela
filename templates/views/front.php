@@ -23,17 +23,17 @@
        <div class="grid grid-cols-3 gap-5">
            <div class="main col-span-2 ">
             <!-- tabs -->
-            <ul class="tab" >
-                <li class="tab-item" > <a href="#de">Temario</a> </li>
-                <li class="tab-item" > <a href="#">Certificado</a> </li>
-                <li class="tab-item" > <a href="#">Docentes</a> </li>
-                <li class="tab-item" > <a href="#">Inversion</a> </li> 
-            </ul>
+            <div  class="" >
+                <ul class="tab" id="tab" >
+                    <li class="tab-item" > <a href="#temario">Temario</a> </li>
+                    <li class="tab-item" > <a href="#certificado">Certificado</a> </li>
+                    <li class="tab-item" > <a href="#docentes">Docentes</a> </li>
+                    <li class="tab-item" > <a href="#inversion">Inversion</a> </li> 
+                </ul>
+            </div> 
             <!-- tab contenido -->
-            <div class="">
-                <div id="temario">
-
-
+            <div class="tab-body pt-5">
+                <!-- <div id="temario">  
                 <?php
                     // args
                     $args = array(
@@ -71,12 +71,7 @@
                                                     echo '<span class="bg-info">Sin Temario</span>'; 
                                             endif; 
                                             ?>
-                                </div>  
-
-
-
-
-
+                                </div>   
 
                     <?php endwhile;
                     else:
@@ -85,7 +80,56 @@
                     rewind_posts();  ?> 
                  
 
-                </div>  
+                </div>   -->
+                <div id="temario" class="section scrollspy" >
+                    <h2  class="" >Presentacion</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                      <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                     
+                    <div  class="tab-body-tematica" >
+
+                    <ul class="collapsible">
+                        <li class="collapsible-item" >  
+                        <div class="collapsible-header">First</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li class="collapsible-item" >  
+                        <div class="collapsible-header">Second</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                        <li class="collapsible-item" >  
+                        <div class="collapsible-header">Third</div>
+                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                        </li>
+                    </ul>
+
+                    </div>
+
+                </div> 
+                <div id="certificado" class="mb-8  section scrollspy">
+                    <h2>Certificado</h2>  
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                      <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    
+                </div> 
+                <div id="docentes" class="mb-8  section scrollspy">
+                    <h2>Docentes</h2>  
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                      <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    
+                </div> 
+                <div id="inversion" class="mb-8  section scrollspy">
+                    <h2>Inversion</h2>  
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
+                    
+                    
+                </div> 
             </div>
            </div>
             <div class="aside">
@@ -104,6 +148,10 @@
             </div>
        </div>
    </div>
+
+
+ 
+
    <div class="mb-8"    >
        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa esse deleniti error, pariatur, tempore fugiat in commodi voluptatibus cupiditate quia possimus, nulla asperiores! Ratione, alias. Iusto magnam officiis quis quod.</p>
    </div>
@@ -111,5 +159,7 @@
    <div class="mb-8 h-56"   >
     </div>
   
+   <div class="mb-8 h-56"   >
+    </div>
    <div class="mb-8 h-56"   >
     </div>
