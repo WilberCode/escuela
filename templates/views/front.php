@@ -27,13 +27,12 @@
                 <ul class="tab" id="tab" >
                     <li class="tab-item" > <a href="#temario">Temario</a> </li>
                     <li class="tab-item" > <a href="#certificado">Certificado</a> </li>
-                    <li class="tab-item" > <a href="#docentes">Docentes</a> </li>
+                    <li class="tab-item" > <a href="#conferencistas">Conferencistas</a> </li>
                     <li class="tab-item" > <a href="#inversion">Inversion</a> </li> 
                 </ul>
             </div> 
             <!-- tab contenido -->
-            <div class="tab-body pt-5">
-                <!-- <div id="temario">  
+            <div class="tab-body pt-5">  
                 <?php
                     // args
                     $args = array(
@@ -45,11 +44,8 @@
                     $the_query = new WP_Query( $args );  
                     if( $the_query->have_posts() ): 
                         while( $the_query->have_posts() ) :$the_query->the_post(); ?>  
-                                <div class=""> 
-                                <?php 
-                                    if( have_rows('congreso_temario')):  
-                                            while ( have_rows('congreso_temario') ) : the_row();   	
-                                            if( have_rows('congreso_presentacion')):  
+                                <div  > 
+                                  <?php  if( have_rows('congreso_presentacion')):  
                                                     while ( have_rows('congreso_presentacion') ) : the_row();   	
                                                         $congreso_presentacion_titulo = get_sub_field('congreso_presentacion_titulo');  
                                                         $congreso_presentacion_descripcion = get_sub_field('congreso_presentacion_descripcion');
@@ -57,56 +53,82 @@
                                                       <div class="mt-8">
                                                          <h2> <?php echo $congreso_presentacion_titulo ?> </h2>  
                                                          <?php echo $congreso_presentacion_descripcion ?> 
-                                                      </div> 
-                                            
+                                                      </div>  
                                                 <?php   
                                                     endwhile; 
                                             else : 
                                                     echo '<span class="bg-info">Sin Presentacion</span>'; 
                                             endif; 
                                             ?>
-                                                <?php   
-                                                    endwhile; 
+                                </div>
+                                <div   id="temario" class=" temario section scrollspy" > 
+                                    <h2>Ejes temáticos</h2>
+                                   <div class="text-center">
+                                        <a class="py-3 px-4 rounded bg-blue-500 text-white inline-block " href="http://#">Descargar Temario</a>
+                                    </div> 
+                                    <ul class="collapsible">
+                                    <?php 
+                                        if( have_rows('congreso_temario')):  
+                                            while ( have_rows('congreso_temario') ) : the_row(); 	      ?>	
+                                                        <li class="collapsible-item" >  
+                                                            <div class="collapsible-header"><h4><?php echo get_sub_field('congreso_temario_titulo');  ?></h4></div>
+                                                            <div class="collapsible-body"><?php echo get_sub_field('congreso_temario_descripcion');  ?> </div>
+                                                        </li>
+                                            <?php   
+                                            endwhile; 
                                             else : 
-                                                    echo '<span class="bg-info">Sin Temario</span>'; 
-                                            endif; 
-                                            ?>
-                                </div>   
+                                            echo '<span class="bg-info">Sin Temario</span>'; 
+                                         endif; 
+                                        ?>
+                                  </ul> 
+                               </div>  
+                               <div id="conferencistas" class="mb-8  section scrollspy"> 
+                                <h2  class="tabs-info__show-title" > Conferencistas Magistrales </h2>
+                                <div class="mt-3 "> 
+                                <?php 
+                                    if( have_rows('congreso_conferencistas')):  
+                                            while ( have_rows('congreso_conferencistas') ) : the_row();  
+                                                        $image = get_sub_field('congreso_conferencista_foto');  	
+                                                        $biografia = get_sub_field('congreso_conferencista_biografia');  
+                                                ?>
+                                                <div class="flex flex-wrap ">
+                                                    <div class=" w-full  md:w-1/3  flex items-center justify-center "> 
+                                                       <div class="text-center" >
+                                                       <picture>
+                                                            <img class="rounded-full w-24 m-auto"  src="<?php echo $image['url'];?>" alt="<?php echo $image['alt'];?>">
+                                                        </picture>   
+                                                        <?php if( have_rows('congreso_conferencista_datos') ):  
+                                                                while( have_rows('congreso_conferencista_datos') ): the_row(); ?>   
+                                                                    <h4 class="mt-2" > <?php echo get_sub_field('congreso_conferencista_nombres');?> </h4>
+                                                                    <span class="text-sm" >(<?php echo get_sub_field('congreso_conferencista_especialidad');?>)</span> 
+                                                                <?php endwhile; ?> 
+                                                        <?php else: echo '<span class="bg-info">No hay Conferencistas</span>';  
+                                                    endif; ?>  
+                                                       </div>
+                                                    </div>
+                                                    <div class=" w-full md:w-2/3">
+                                                        <div class=" text-center md:text-left text-sm">
+                                                            <?php echo $biografia; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        <?php   
+                                            endwhile; 
+                                    else : 
+                                            echo '<span class="bg-info">No hay Conferencistas</span>'; 
+                                    endif;
 
+                                    ?>                    
+                        </div> 
+                               
+                    <!-- End While post type -->
                     <?php endwhile;
                     else:
                         printf('<p>No hay entradas</p>');
                     endif;
                     rewind_posts();  ?> 
-                 
-
-                </div>   -->
-                <div id="temario" class="section scrollspy" >
-                    <h2  class="" >Presentacion</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                      <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                     
-                    <div  class="tab-body-tematica" >
-
-                    <ul class="collapsible">
-                        <li class="collapsible-item" >  
-                        <div class="collapsible-header">First</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li class="collapsible-item" >  
-                        <div class="collapsible-header">Second</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li class="collapsible-item" >  
-                        <div class="collapsible-header">Third</div>
-                        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                    </ul>
-
-                    </div>
-
-                </div> 
+                  
+               
                 <div id="certificado" class="mb-8  section scrollspy">
                     <h2>Certificado</h2>  
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
@@ -114,14 +136,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
                       <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
                     
-                </div> 
-                <div id="docentes" class="mb-8  section scrollspy">
-                    <h2>Docentes</h2>  
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                      <p class="mt-12" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>
-                    
-                </div> 
+                </div>  
                 <div id="inversion" class="mb-8  section scrollspy">
                     <h2>Inversion</h2>  
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio facere, obcaecati alias soluta, dolore porro fugit eos eaque praesentium voluptate dolores non rem earum voluptatem distinctio nihil consequatur incidunt!</p>

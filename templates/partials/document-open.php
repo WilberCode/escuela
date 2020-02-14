@@ -7,10 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= wp_get_document_title() ?></title>
     <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
-    <?php wp_head() ?> 
-   
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap">
-
-   
+    <?php wp_head() ?>   
 </head>
 <body <?php body_class() ?>>
