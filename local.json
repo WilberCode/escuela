@@ -1,3 +1,3 @@
 {
-  "proxy": "http://localhost/wordpress/escuela/"
+  "proxy": "http://localhost:8080/wordpress/escuela/"
 }
