@@ -38,6 +38,7 @@ function my_acf_format_value( $value, $post_id, $field ) {
 	// return
 	return $value;
 } 
+
 add_filter('acf/format_value/type=textarea', 'my_acf_format_value', 10, 3);
 
  
@@ -77,3 +78,5 @@ function get_events(){
 		return $data;
 	}
 }
+ add_filter('use_block_editor_for_post', '__return_false', 10);
+ 

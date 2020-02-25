@@ -1,77 +1,149 @@
 .main{ 
 }
-
-.tab{ 
-    @apply grid grid-cols-4 gap-5 w-full bg-white m-0;
-    max-width: 809.81px;
-    &-item{ 
-        a{
-            @apply font-cooperhewitteg shadow block text-center py-5 rounded relative overflow-hidden bg-white ;
+// tabs congress
+// .tab{ 
+//     @apply grid grid-cols-4 gap-5 w-full bg-white m-0;
+//     max-width: 809.81px;
+//     &-item{ 
+//         a{
+//             @apply font-cooperhewitteg shadow block text-center py-5 rounded relative overflow-hidden bg-white ;
         
-        }
-        a.active::after {
-            content: '';
-            @apply absolute bg-blue-500;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            height: 3px;
-        }
-    }
-} 
+//         }
+//         a.active::after {
+//             content: '';
+//             @apply absolute bg-blue-500;
+//             width: 100%;
+//             bottom: 0;
+//             left: 0;
+//             height: 3px;
+//         }
+//     }
+// } 
 
  
-.sticky {
-    position: fixed;
-    top: 0; 
-    @apply z-10 w-full;
-}
+// .sticky {
+//     position: fixed;
+//     top: 0; 
+//     @apply z-10 w-full;
+// }
 
 
 
 /** Start Maaterialize  */
 
 // Collapsible
-.collapsible{ 
+// .collapsible{ 
     
-    &-item{
-        @apply shadow mb-4 ; 
-        h4{
+//     &-item{
+//         @apply shadow mb-4 ; 
+//         h4{
         
-        } 
-    } 
-    &-header{
-        @apply px-6 py-4  border-l-4 border-blue-500;
+//         } 
+//     } 
+//     &-header{
+//         @apply px-6 py-4  border-l-4 border-blue-500;
         
-    }
-    &-body {
-        @apply px-6 py-4 hidden;
-        display: none;  
-        padding: .5em 1.5rem; 
-        ul{
-            li{
-                @apply relative pl-5 mb-3;
-                &::before{
-                    content: "\f101";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    font-family: "Font Awesome 5 Free";
-                    font-weight: 900;
-                    color:  black;
-                }
-            }
-        }
-    }
-    .active {
-        @apply outline-none ;
-        .collapsible-header{ 
-             @apply bg-blue-500 ;
-            h4{
-                @apply text-white #{!important} ;
+//     }
+//     &-body {
+//         @apply px-6 py-4 hidden;
+//         display: none;  
+//         padding: .5em 1.5rem; 
+//         ul{
+//             li{
+//                 @apply relative pl-5 mb-3;
+//                 &::before{
+//                     content: "\f101";
+//                     position: absolute;
+//                     left: 0;
+//                     top: 0;
+//                     font-family: "Font Awesome 5 Free";
+//                     font-weight: 900;
+//                     color:  black;
+//                 }
+//             }
+//         }
+//     }
+//     .active {
+//         @apply outline-none ;
+//         .collapsible-header{ 
+//              @apply bg-blue-500 ;
+//             h4{
+//                 @apply text-white #{!important} ;
                    
-            }  
-        }
+//             }  
+//         }
        
+//     }
+// } 
+body{
+    background: rgb(245, 245, 245);
+}
+
+// tabs congress
+.tab{   
+    &-menu{
+        @apply grid grid-cols-4 gap-5 w-full  m-0 h-32 ;
+        .indicator{
+            display: none;
+        }
+    }
+    &-item{  
+          @apply w-full h-full overflow-hidden rounded shadow bg-white;
+    }
+    &__link{
+            @apply flex w-full h-full;
+             picture {
+                 @apply flex justify-center items-center relative w-1/3 ;
+                 img{
+                    @apply w-full h-full object-cover object-center; 
+                 }
+                 i{
+                    @apply absolute text-white;
+                    
+                 }
+                 span {
+                     display: none;
+                 }
+                 &::before{
+                     content: '';
+                     @apply absolute rounded-full;
+                     width: 60px;
+                     height: 60px;
+                     box-shadow: 0 0 0 2px #fff;
+                     background: rgba(0,0,0,.40);
+                 }
+                 &::after {
+                     content: '';
+                     @apply absolute rounded;
+                     width: 0;
+                     height: 4px;
+                     background: #fff;
+                     bottom: 10px;
+                     transition:all .4s linear ;
+                 } 
+             }
+             h1{
+                @apply flex  w-full h-full w-2/3 justify-center items-center text-center text-lg px-5;
+             }
+         
     }
 } 
+
+.tabs .tab:hover picture::after { 
+    width: 80%; 
+}
+
+
+// a {
+//     @apply font-cooperhewitteg shadow block text-center rounded relative overflow-hidden bg-white;
+
+// }
+
+// a.active::after {
+//     content: '';
+//     @apply absolute bg-blue-500;
+//     width: 100%;
+//     bottom: 0;
+//     left: 0;
+//     height: 3px;
+// }

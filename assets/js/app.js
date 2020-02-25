@@ -17,49 +17,52 @@ import AnimateOnPageLinks from "./components/AnimateOnPageLinks";
 //     ReplaceObfuscatedEmailAddresses.init();
 //     AnimateOnPageLinks.init();
 // });
- 
-let  doc =  document.getElementsByTagName('body')
-console.log(doc, document)
+  
  
 const ExampleModule5 = require('./materialize/materialize.min.js');
 
 M.AutoInit(); 
 
 // Start ScrollSpy
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.scrollspy');
-    var instances = M.ScrollSpy.init(elems, options);
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     var elems = document.querySelectorAll('.scrollspy');
+//     var instances = M.ScrollSpy.init(elems, options); 
 
-  
-
-
+// }); 
 //   End ScrollSpy
+// var instance = M.Tabs.init(el, options);
+
+// Start Tabs
+ 
+
+// End Tabs
+
+
 
 // Start Pushpin
  
 
- window.onscroll = function () {
-     myFunction()
- };
+//  window.onscroll = function () {
+//      myFunction()
+//  };
 
- var tab = document.getElementById("tab");
- var sticky = tab.offsetTop;
+//  var tab = document.getElementById("tab");
+//  var sticky = tab.offsetTop;
 
- function myFunction() {
-     if (window.pageYOffset >= sticky) {
-         tab.classList.add("sticky")
-     } else {
-         tab.classList.remove("sticky");
-     }
- }
+//  function myFunction() {
+//      if (window.pageYOffset >= sticky) {
+//          tab.classList.add("sticky")
+//      } else {
+//          tab.classList.remove("sticky");
+//      }
+//  }
 
 //   End Pushpin
  
 
+// fetch('http://localhost:8080/wordpress/escuela/index.php/wp-json/eventos/destacados').then((res) => res.json()).then((res) => console.log(res))
 
-
-
+ 
   instance.destroy();
 
 
