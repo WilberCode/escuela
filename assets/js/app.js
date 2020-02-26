@@ -19,7 +19,8 @@ import AnimateOnPageLinks from "./components/AnimateOnPageLinks";
 // });
   
  
-const ExampleModule5 = require('./materialize/materialize.min.js');
+// const ExampleModule5 = require('./materialize/materialize.min.js');
+import './materialize/materialize.min.js'
 
 M.AutoInit(); 
 

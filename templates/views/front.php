@@ -48,8 +48,23 @@
     </ul>
     </div> 
 </div>
-<div class="container">
-     <div id="courses" class="">Test 1</div>
+<div class="container m-auto pt-6">
+    <div id="courses" class="">
+        <h2 class="text-md mb-4">Cursos</h2>
+        <a class="card  w-full">
+            <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
+            <div class="card-body py-4 px-6">
+                 <h2  class="text-blue-500 pt-1 pb-2 border-b  border-gray-300" >Especialización en Administracion financiera Gubernamental </h2>
+                 <div><svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#date'; ?>"></svg> Fecha: <span>Lima, 10 de marzo 2020</span> </div>
+            </div>
+            <div class="card-footer">
+                ewdwwedfdtdtr Lorem ipsu 
+            </div> 
+        </a>
+
+    
+
+    </div>
     <div id="congresses" class="">Test 2</div>
     <div id="diplomas" class="">Test 3</div>
     <div id="inhouse" class="">Test 4</div>
