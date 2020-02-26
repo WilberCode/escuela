@@ -1,11 +1,12 @@
 <div class="h-20"></div>
+ 
 
 <div class=" m-auto  px-4">
     <div class="tab-wrap">
       <ul class="tab-menu tabs">
         <li class="tab-item tab tab-courses"><a class="tab__link active" href="#courses">
                 <picture> <img class="tab__img-couser" src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/cursos-tab-bg.png"   alt="cursos"> 
-                     <i class="fas fa-book"></i> 
+                      <svg  ><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#courses';?>"></svg>  
                      <span>Cursos</span> 
                     </picture>
                 <h1>Cursos - Modalidad Presencial</h1>
@@ -14,7 +15,7 @@
         <li class="tab-item tab tab-congress">
             <a class="tab__link" href="#congresses">
                 <picture> <img class="tab__img-congress"  src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/congresos-tab-bg.png"   alt="congresos">  
-                <i class="fas fa-book"></i> 
+                    <svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#congresses'; ?>"></svg> 
                 <span>Congresos</span> 
                 </picture>
                 <h1>Congresos Nacionales e Internacionales</h1>
@@ -25,7 +26,8 @@
             <picture> 
                 <img src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/diplomas-tab-bg.png"  alt="diplomas">
                
-                      <i class="fas fa-book"></i>
+                <svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#diplomas'; ?>"></svg> 
+
                 <span>Diplomas</span> 
             </picture>
             <h1>Diplomas de Especialización</h1>
@@ -34,7 +36,10 @@
         <li class="tab-item tab tab-inhouse ">
             <a class="tab__link" href="#inhouse">
                 <picture> 
-                    <img class="tab__img-congress"  src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/inhouse-tab-bg.png"  alt="cursos in-house"> <i class="fas fa-book"></i>  <span>In-House</span> 
+                    <img class="tab__img-congress"  src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/inhouse-tab-bg.png"  alt="cursos in-house">                                                     <svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/img/icons.svg#courses'; ?>"></svg> 
+ <span>In-House</span> 
+ <svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#inhouse'; ?>"></svg> 
+
                 </picture>
                 <h1>Capacitación a la Medida - Cursos In-House</h1>
             </a>
