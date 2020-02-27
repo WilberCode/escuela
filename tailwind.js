@@ -1,7 +1,7 @@
 module.exports = {
     theme: {
         container: {
-            padding: '1.5rem',
+            padding: '.5rem',
         },
         extend: {
             colors: {
