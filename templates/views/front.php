@@ -51,14 +51,15 @@
 <div class="container m-auto pt-6">
     <div id="courses" class="">
         <h2 class="text-md mb-4">Cursos</h2>
-        <a class="card  w-full">
+        <a class="card  w-full text-black">
             <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
             <div class="card-body py-4 px-6">
-                 <h2  class="text-blue-500 pt-1 pb-2 border-b  border-gray-300" >Especialización en Administracion financiera Gubernamental </h2>
-                 <div><svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#date'; ?>"></svg> Fecha: <span>Lima, 10 de marzo 2020</span> </div>
+                 <h2  class="pt-1 pb-2 border-b  border-gray-300 uppercase  text-blue-500 font-semibold mb-5" >Especialización en Administracion financiera Gubernamental </h2>
+                 <div  class="inline-flex items-center" ><svg class=" w-4 h-4 text-blue-500 fill-current "><use href="<?php echo get_bloginfo('template_directory').'../assets/svg/icons.svg#calendar'; ?>"></svg> <span class="text-black font-cooperhewitteg mx-1" >Fecha: </span><span  class="text-gray-700"> Lima, 10 de marzo 2020</span> </div>
+                 <div  class="inline-flex items-center" ><svg class=" w-4 h-4 text-blue-500 fill-current "><use href="<?php echo get_bloginfo('template_directory').'../assets/svg/icons.svg#certificado'; ?>"></svg> <span class="text-black font-cooperhewitteg mx-1" >Certificado: </span><span  class="text-gray-700"> 24 horas academicas</span> </div>
             </div>
-            <div class="card-footer">
-                ewdwwedfdtdtr Lorem ipsu 
+            <div class="card-footer bg-gray-200">
+                <h1>footer</h1>
             </div> 
         </a>
 
