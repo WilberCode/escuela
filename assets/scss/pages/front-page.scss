@@ -52,7 +52,10 @@ body{
                     @apply block absolute z-10  bg-white rounded text-center p-2 shadow-lg text-black;
                     bottom: -20px;
                     width: 100%;
-                    max-width: 140px;  
+                    max-width: 100px;  
+                     @screen sm{
+                        max-width: 140px; 
+                     }
                      @screen lg {
                          @apply hidden;
                      }
@@ -96,5 +99,14 @@ body{
 } 
 .tabs .tab .active picture::after { 
     width: 80%; 
+} 
+
+.category{
+    &-title {
+        @apply mb-4;
+        span{
+              @apply bg-orange-500 text-white rounded-full py-1 px-2 text-sm font-latoeg;
+        }
+    } 
 } 
 

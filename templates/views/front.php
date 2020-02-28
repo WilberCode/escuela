@@ -1,5 +1,30 @@
-<div class="h-20"></div>
+
+<section class=" bg-gray-400 py-48">
+
+</section>
+
+<div class="h-8"></div>
  
+
+ <script>
+     var numberr  =  document.body.offsetWidth
+     console.log(numberr)
+    
+     <?php echo 'hola'.numberr; ?>
+ </script>
+
+ <?php 
+ $number = 400;
+    if( 400 == $number ){
+        echo "hola soy width";
+    } else{
+        echo "hola no soy width";
+
+    }
+ 
+ ?>
+
+
 
 <div class=" m-auto px-2 md:px-4">
     <div class="tab-wrap">
@@ -48,39 +73,70 @@
     </ul>
     </div> 
 </div>
-<div class="container m-auto pt-12 md:pt-8">
-    <div id="courses" class="">
-        <h2 class="text-md mb-4">Cursos <span  class="bg-orange-500 text-white rounded-full py-1 px-2 text-sm font-latoeg " >Nuevos 2020 </span></h2>
-        <a class="card  w-full text-black" >
-            <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
-            <div class="card-body py-4 px-6 bg-white">
-                 <div  class="mb-1" ><svg class="inline-block align-text-top w-5 h-5 text-black fill-current"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/forms.svg#courses'; ?>"></svg> <span   class="text-black">Curso</span> </div>
-                 <h2  class="pt-1 pb-2 border-b  border-gray-300 uppercase  text-blue-500 font-semibold mb-5" >Especialización en Administracion financiera Gubernamental </h2>
-                 <div  class="" ><svg class=" inline-block align-text-top mr-1 mb-2  w-5 h-5 text-blue-500 fill-current "><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#calendar'; ?>"></svg> <span class="text-black font-cooperhewitteg  " >Fecha: </span><span  class="text-gray-700 text-sm"> Lima, 10 de marzo 2020</span> </div>
-                 <div  class="" ><svg class=" inline-block align-text-top mr-1 mb-2  w-5 h-5 text-blue-500 fill-current "><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#certificado'; ?>"></svg> <span class="text-black font-cooperhewitteg " >Certificado: </span><span  class="text-gray-700 text-sm"> 24 horas academicas</span> </div>
-                 <div  class=" inline-flex w-full items-center shadow rounded p-3  mt-3">
-                    <h3  class=" text-sm sm:text-lg align-bottom leading-none  mr-2" >Certificado a nombre de:</h3>
-                    <img  class=" w-32 sm:w-40 h-auto " src="https://esscuela.com/img/logo.png" alt="Escuela de Gerencia y Gestión">
-                 </div>
-            </div>
-            <div class="card-footer bg-gray-200 flex justify-between items-center px-6 py-1  ">
-                <button  class="btn btn-outline btn-outline-blue text-sm" >Ver curso</button>
-                <div>
-                    <svg class=" inline-block align-text-top mr-1   w-5 h-5 text-blue-500 fill-current "><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#price'; ?>"></svg> 
-                    <var class="font-latoeg not-italic text-blue-500 text-xl font-normal" >S/.500.<span class="text-sm font-medium">00</span> </var>
+
+<!-- Start Post -->
+<div class="container m-auto pt-12 md:pt-8 category grid  sm:grid-cols-5">
+    <section class="post  sm:col-span-4 ">
+        <article id="courses">
+            <h2 class="category-title">Cursos <span >Nuevos 2020 </span></h2>
+            <a class="card" >
+                <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
+                <div class="card-body">
+                    <div  class="card-category mb-1" ><svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/forms.svg#courses'; ?>"></svg> <span  class="text-black text-sm ml-1 ">Curso</span> </div>
+                    <h2  class="card__title" >Especialización en Administracion financiera Gubernamental </h2>
+                    <div  class="card-info" ><svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#calendar'; ?>"></svg> <span class="card-info__attribute  " >Fecha: </span><span  class="card-info__value"> Lima, 10 de marzo 2020</span> </div>
+                    <div  class="card-info" ><svg class=""><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#certificado'; ?>"></svg> <span class="card-info__attribute " >Certificado: </span><span  class="card-info__value"> 24 horas academicas</span> </div>
+                    <div  class="card-certify">
+                        <h3>Certificado a nombre de:</h3>
+                        <img  class=" w-32 sm:w-40 h-auto " src="https://esscuela.com/img/logo.png" alt="Escuela de Gerencia y Gestión">
+                    </div>
                 </div>
-            </div> 
-        </a>
-
-    
-
-    </div>
-    <div id="congresses" class="">Test 2</div>
-    <div id="diplomas" class="">Test 3</div>
-    <div id="inhouse" class="">Test 4</div>
+                <div class="card-footer">
+                    <button class="btn btn-outline btn-outline-blue text-base" >Ver curso</button>
+                    <div  class="card-footer-price" >
+                        <svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#price'; ?>"></svg> 
+                        <var>S/.500.<span class="text-sm font-medium">00</span> </var>
+                    </div>
+                </div> 
+            </a> 
+        </article>
+        <div id="congresses" class="">Test 2</div>
+        <div id="diplomas" class="">Test 3</div>
+        <div id="inhouse" class="">Test 4</div>
+    </section>
+    <aside class="sidebar bg-gray-300 mt-8 sm:mt-0 ">
+        <h1>Sidebar</h1>
+    </aside>
 </div>
+<!-- End Post --> 
 
+<!-- Start Contact -->
+<div class=" bg-blue-500 mt-40"> 
+    <div class="container m-auto py-48">
+        <div class="flex">
+            <div  class="w-2/3"> 
+                <h2  class="max-w-sm text-white" >Capacítate en los Programas más requeridos en la <span class="text-2xl text-orange-400" >Gestión Pública</span> </h2>
+            </div>
+            <div  class="w-1/3"> 
+                <h1>formulario de contacto</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact -->
 
+<!-- Start Gallery -->
+<div class="gallery">
+    <h1>Galeria</h1>
+</div>
+<!-- End Gallery -->
+
+<!-- Start Clients -->
+<div class="clients">
+    <h1>Clientes</h1>
+    
+</div>
+<!-- End Clients --> 
 
 <div class="container m-auto">
     <div class="grid grid-cols-3 gap-5">

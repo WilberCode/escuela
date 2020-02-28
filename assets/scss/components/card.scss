@@ -1,5 +1,44 @@
 .card{
-    @apply w-full block overflow-hidden rounded-md shadow-md;
-    max-width: 413px;
+    @apply w-full block overflow-hidden rounded-md shadow-md text-black;
+    max-width: 445px; 
+    &-body{
+        @apply py-4 px-6 bg-white; 
+    }
+    &-category{
+        svg {
+            @apply inline-block align-text-top w-5 h-5 text-black fill-current;
+        }
+    }
+    &__title{
+          @apply pt-1 pb-2 border-b border-gray-300 uppercase text-blue-500 font-semibold mb-5;
+    }
+    &-info{
+        svg{
+           @apply inline-block align-text-top mr-1 mb-2 w-5 h-5 text-blue-500 fill-current;
+        }
+        &__attribute{
+           @apply text-black font-cooperhewitteg text-black font-cooperhewitteg;
+        }
+        &__value{
+           @apply text-gray-700 text-sm text-gray-700 text-sm;
+        }
+    }
+    &-certify{
+        @apply inline-flex w-full items-center shadow rounded p-3 mt-3;
+        h3{
+           @apply text-base align-bottom leading-none mr-2;
+        }
+    }
+    &-footer{
+       @apply bg-gray-200 flex justify-between items-center px-6 py-1; 
+       &-price{
+            svg{
+                 @apply inline-block align-text-top mr-1 w-5 h-5 text-blue-500 fill-current;
+            }
+            var{
+                 @apply font-latoeg not-italic text-blue-500 text-xl font-normal;
+            }
+       }
+    }
 }
  
