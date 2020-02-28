@@ -50,7 +50,7 @@
 </div>
 <div class="container m-auto pt-12 md:pt-8">
     <div id="courses" class="">
-        <h2 class="text-md mb-4">Cursos <span  class="bg-orange-600 text-white rounded-full py-1 px-2 text-sm " >Nuevos 2020 </span></h2>
+        <h2 class="text-md mb-4">Cursos <span  class="bg-orange-500 text-white rounded-full py-1 px-2 text-sm font-latoeg " >Nuevos 2020 </span></h2>
         <a class="card  w-full text-black" >
             <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
             <div class="card-body py-4 px-6 bg-white">
