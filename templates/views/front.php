@@ -1,31 +1,10 @@
 
-<section class=" bg-gray-400 py-48">
+<section class=" bg-gray-200 py-24">
 
 </section>
 
 <div class="h-8"></div>
- 
-
- <script>
-     var numberr  =  document.body.offsetWidth
-     console.log(numberr)
-    
-     <?php echo 'hola'.numberr; ?>
- </script>
-
- <?php 
- $number = 400;
-    if( 400 == $number ){
-        echo "hola soy width";
-    } else{
-        echo "hola no soy width";
-
-    }
- 
- ?>
-
-
-
+  
 <div class=" m-auto px-2 md:px-4">
     <div class="tab-wrap">
       <ul class="tab-menu tabs">
@@ -75,7 +54,7 @@
 </div>
 
 <!-- Start Post -->
-<div class="container m-auto pt-12 md:pt-8 category grid  sm:grid-cols-5">
+<main class="container m-auto pt-12 md:pt-8 category grid  sm:grid-cols-5">
     <section class="post  sm:col-span-4 ">
         <article id="courses">
             <h2 class="category-title">Cursos <span >Nuevos 2020 </span></h2>
@@ -83,11 +62,11 @@
                 <img class="w-full" src="https://igc.edu.pe/wp-content/uploads/2018/12/Administracion-fianaciera-gubernamental-.jpg" alt="">
                 <div class="card-body">
                     <div  class="card-category mb-1" ><svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/forms.svg#courses'; ?>"></svg> <span  class="text-black text-sm ml-1 ">Curso</span> </div>
-                    <h2  class="card__title" >Especialización en Administracion financiera Gubernamental </h2>
-                    <div  class="card-info" ><svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#calendar'; ?>"></svg> <span class="card-info__attribute  " >Fecha: </span><span  class="card-info__value"> Lima, 10 de marzo 2020</span> </div>
+                    <h2  class="card__title ">Especialización en Administracion financiera Gubernamental </h2>
+                    <div  class="card-info" ><svg><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#calendar'; ?>"></svg> <span class="card-info__attribute font-cooperhewitteg " >Fecha: </span><span  class="card-info__value"> Lima, 10 de marzo 2020</span> </div>
                     <div  class="card-info" ><svg class=""><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#certificado'; ?>"></svg> <span class="card-info__attribute " >Certificado: </span><span  class="card-info__value"> 24 horas academicas</span> </div>
                     <div  class="card-certify">
-                        <h3>Certificado a nombre de:</h3>
+                        <h3  class=" " >Certificado a nombre de:</h3>
                         <img  class=" w-32 sm:w-40 h-auto " src="https://esscuela.com/img/logo.png" alt="Escuela de Gerencia y Gestión">
                     </div>
                 </div>
@@ -107,7 +86,7 @@
     <aside class="sidebar bg-gray-300 mt-8 sm:mt-0 ">
         <h1>Sidebar</h1>
     </aside>
-</div>
+</main>
 <!-- End Post --> 
 
 <!-- Start Contact -->

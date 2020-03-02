@@ -1,10 +1,9 @@
 
 @import "~tailwindcss/base"; 
-@import "~tailwindcss/components";
-@import "~tailwindcss/utilities"; 
-
-// Custom styles
-@import "../font/font";
+@import "~tailwindcss/components";  
+@import "~tailwindcss/utilities";  
+// Custom styles 
+@import "../font/font"; 
 @import "partials/base";
 @import "lib/mixins";
 @import "partials/animations";
@@ -14,6 +13,14 @@
 @import "pages/front-page"; 
 @import "components/card";
 @import "components/button";
+@import "components/search-form";
+
+
+
+// html{
+//     font-family: 'CooperHewitt-Medium' !important ;
+// }
+
 
 
 

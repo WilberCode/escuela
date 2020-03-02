@@ -18,18 +18,21 @@
                     </a>     
                      <?php }?>    
         </div>
-        <div class="lg:w-2/3" >
+        <div class="lg:w-2/3 flex" >
              <?php  
                 wp_nav_menu(array(
                     'theme_location'  => 'main',
                     'container'       => 'nav',
                     'container_class' => 'header-nav',
-                    'container_id'    => 'header-nav',
+                    'container_id'    => 'header-nav',  
                     'menu' => 'ul',
                     'menu_class'      => 'header-menu',
                     'menu_id'         => 'header-menu' ,
                 ));  
-            ?>     
+            ?> 
+            <div class="front-search" id="front-search" > 
+                <?php get_search_form(true); ?>  
+            </div>     
         </div>
     </div>
 </header>

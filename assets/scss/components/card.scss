@@ -10,14 +10,14 @@
         }
     }
     &__title{
-          @apply pt-1 pb-2 border-b border-gray-300 uppercase text-blue-500 font-semibold mb-5;
+          @apply pt-1 pb-2 border-b border-gray-300  text-blue-500  mb-5 uppercase font-medium ;
     }
     &-info{
         svg{
            @apply inline-block align-text-top mr-1 mb-2 w-5 h-5 text-blue-500 fill-current;
         }
         &__attribute{
-           @apply text-black font-cooperhewitteg text-black font-cooperhewitteg;
+           @apply text-black text-black font-cooperhewitteg font-semibold;
         }
         &__value{
            @apply text-gray-700 text-sm text-gray-700 text-sm;
@@ -26,7 +26,7 @@
     &-certify{
         @apply inline-flex w-full items-center shadow rounded p-3 mt-3;
         h3{
-           @apply text-base align-bottom leading-none mr-2;
+           @apply text-base align-bottom leading-none mr-2  font-medium  ;
         }
     }
     &-footer{
