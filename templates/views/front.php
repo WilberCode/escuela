@@ -20,8 +20,7 @@
     } else{
         echo "hola no soy width";
 
-    }
- 
+    } 
  ?>
 
 
