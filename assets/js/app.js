@@ -21,6 +21,30 @@ import AnimateOnPageLinks from "./components/AnimateOnPageLinks";
  
 // const ExampleModule5 = require('./materialize/materialize.min.js');
 import './materialize/materialize.min.js'
+ 
+
+// Shorthand 
+const Id = document.getElementById.bind(document)
+const className = document.getElementsByClassName.bind(document)
+const tagName = document.getElementsByTagName.bind(document)
+
+// Toggle and Menu 
+let navToggle = Id('nav-toggle')
+let nav = Id('header-nav')
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('nav-toggle-active')
+  nav.classList.toggle('nav-active')
+  console.log('hola')
+
+})
+
+// Id('menu').addEventListener('click', (e) => {
+//   nav.classList.toggle('nav-active')
+//   navToggle.classList.toggle('nav-toggle-active')
+// })
+
+
 
 M.AutoInit(); 
 
@@ -65,5 +89,4 @@ M.AutoInit();
 
  
   instance.destroy();
-
 

@@ -1,0 +1,116 @@
+
+.search{
+    &-form{
+        position:relative;
+        span{
+            display: none;
+        }
+        label{ 
+        }
+        &::after {
+            content: "\f002";
+            @apply text-gray-500;
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            position: absolute;
+            right:1em;
+            top: 50%;
+            transform: translateY(-50%);
+        } 
+    }
+    &-field{ 
+        @apply w-full shadow-md text-gray-800;
+        padding: .5em;
+        padding-right:2.2em;
+        border-radius: 4px; 
+        outline: none;  
+        font-size: 18px; 
+        background: #ffffff;  
+        margin: auto;  
+        &::placeholder {
+            @apply text-gray-500;
+        }
+    }
+    &-submit{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        opacity: 0;
+        z-index:40; 
+    }
+} 
+ 
+// Search in Header
+.header-search{ 
+    .search {
+        &-form {
+            position: relative;
+
+            span {
+                display: none;
+            }
+
+            label {}
+
+            &::after {
+                content: "\f002";
+                @apply text-white z-20;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                right: 1em;
+                top: 50%;
+                transform: translateY(-50%); 
+            }
+        }
+
+        &-field {
+            @apply w-full text-gray-800 hidden;
+            padding: .5em;
+            padding-right: 2.2em;
+            border-radius: 4px;
+            outline: none; 
+            background: #ffffff;
+            margin: auto;
+            box-shadow: 0 0 0 1px #4484d8;
+            width: 200px;
+            height: 36px;
+            font-size: 16px;
+            transition: all 0.5s cubic-bezier(0, 0, 0.42, 0.96);
+
+             @screen sm {
+                @apply block;
+                  
+             } 
+            &::placeholder {
+                @apply text-gray-500;
+            }
+            &:hover{
+                @apply w-full ; 
+                width: 310px; 
+            }
+        }
+
+        &-submit {
+            @apply absolute bg-blue-500 z-10 opacity-100 text-blue-500 ; 
+            top: 0;
+            right: 0;
+            bottom: 0;
+            border: none;  
+            cursor: pointer;   
+        }
+    }
+}
+.search-active{ 
+    margin-top:var(--main-space-top); 
+    height:var(--header-height);
+    overflow: none;
+}
+.search-top{
+    margin-top:var(--header-height);  
+}
+
