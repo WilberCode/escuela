@@ -91,13 +91,16 @@
 
 <!-- Start Contact -->
 <div class=" bg-blue-500 mt-40"> 
-    <div class="container m-auto py-48">
+    <div class="container m-auto py-8">
         <div class="flex">
             <div  class="w-2/3"> 
                 <h2  class="max-w-sm text-white" >Capacítate en los Programas más requeridos en la <span class="text-2xl text-orange-400" >Gestión Pública</span> </h2>
             </div>
-            <div  class="w-1/3"> 
-                <h1>formulario de contacto</h1>
+            <div  class="w-1/3 bg-white rounded-md"> 
+               <div class="px-6 py-6" >
+                    <h1  class="mb-5" >formulario de contacto</h1>
+                    <?php echo do_shortcode('[everest_form id="53"]'); ?>
+               </div>
             </div>
         </div>
     </div>

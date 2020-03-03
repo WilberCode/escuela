@@ -1,0 +1,11 @@
+
+
+.evf-field{
+    input {
+        @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight #{!important};
+
+        &:focus {
+            @apply border-gray-500 bg-white outline-none #{!important};
+        }
+    }
+}

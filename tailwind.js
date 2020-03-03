@@ -77,6 +77,16 @@ module.exports = {
                 ],
                 cooperhewitteg:'"CooperHewitt-Medium"'
             }
+        },
+        screens: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            maxsm: {'max': '640px'},
+            maxmd: { 'max': '768px'},
+            maxlg: {'max': '1023px'},
+            maxl: {'max': '1280px'}
         }
         
     },

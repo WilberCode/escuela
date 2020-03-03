@@ -1,7 +1,17 @@
 .header{
-    @apply shadow relative;
+    @apply shadow relative; 
+    @screen maxlg{
+        &::before {
+            content: '';
+            @apply absolute z-40 w-full h-full bg-white;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0; 
+        }
+    }
     &-logo{ 
-        @apply flex items-center;
+        @apply flex items-center z-50 relative ;
         img{
             width: 8em;
         }
@@ -48,63 +58,77 @@
                     }
                 }
             }
-        }
+        } 
     }
 }
 
-.mobile{ 
+.mobile{  
     &-nav{
         @apply w-full ;  
-        @screen md{
-            @apply hidden  ;
-        }
+         @screen lg {
+             @apply hidden;
+         }
         &-wrap{
-            @apply absolute w-full bg-blue-500 px-2 py-3 z-20 ;
-            left: 0;
-            top:45px; 
-            transform: translateY(-32em);
-            transition: all .6s cubic-bezier(0, 0.88, 1, 1);
-            opacity: 0;
-            @screen md{
-                @apply relative w-auto  px-0 py-0;
-                top:0;
+            @apply absolute w-full bg-blue-500 px-2 py-3 z-20  ;
+             
+            @screen  maxlg { 
+                left: 0;
+                top:45px;
+                transform: translateY(-80em);
+                transition: all .6s cubic-bezier(0, 0.88, 1, 1);
+                opacity: 0;
+                @apply h-screen;
             }
+            @screen md{
+                top:55px;
+            } 
+            @screen lg{
+                @apply relative w-auto px-0 py-0  ;
+                top:0;
+            } 
         }
 
     }
     &-menu{
-        li{
+       
+        li{ 
             a{
                 @apply py-3 text-white block; 
-            }
+                border-bottom: 1px solid rgba(white, 0.1);  
+            } 
+             &:last-child > a{
+                     border-bottom: none; 
+             } 
         }
+       
     }
 }
 
 
 // Toggle
 
-.nav {  
-    @media md{
-        &-active {
+.nav {   
+        &-active { 
             transform: translateY(0);
-            opacity: 1;
-        }
-    }
+            opacity: 1; 
+            display: block;
+        } 
   
     &-toggle {
         &-wrap { 
-             height: 26px;
-             margin-left: 10px;
+            height: 28px; 
+            @apply relative z-50 mr-2 ;
+            @screen maxmd {
+                 transform: scale(.8) translateX(9px);
+            }
         } 
         width: 40px;
-        height: 26px;
+        height: 28px;
         transform: rotate(0deg);
         transition: .5s ease-in-out;
         cursor: pointer; 
         box-shadow: 0 0 0 6px #4299e1;
-        @apply bg-blue-500;
-
+        @apply bg-blue-500; 
         span {
             display: block;
             position: absolute;

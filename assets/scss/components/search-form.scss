@@ -50,7 +50,7 @@
         &-form { 
             @apply w-full relative;
 
-            @screen md {
+            @screen lg {
                 @apply w-auto;
              } 
             span {
@@ -81,14 +81,14 @@
             margin: auto; 
             height: 36px;
             font-size: 16px;
-            transition: all 0.5s cubic-bezier(0, 0, 0.42, 0.96); 
-             @screen sm {
+            transition: width 0.5s cubic-bezier(0, 0, 0.42, 0.96); 
+             @screen lg {
                 @apply block;  
                 box-shadow: 0 0 0 1px #4484d8; 
              } 
-             @screen md {
+             @screen lg {
                 width: 200px;
-                &:hover{ 
+                &:hover, &:focus{ 
                     width: 310px; 
                 }
              } 
@@ -106,7 +106,7 @@
             border: none;  
             cursor: pointer;   
             border-radius:0 4px  4px 0;
-            @screen md {
+            @screen lg {
                 @apply bg-blue-500  text-blue-500;
              } 
         } 

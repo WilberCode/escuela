@@ -2,7 +2,7 @@
 <?php get_template_part( 'templates/partials/document-open' ); ?>
 
 <!-- Site header markup goes here -->
-<header class="shadow bg-white">
+<header class="shadow bg-white header">
     <div class="header-wrap container m-auto flex h-12 justify-between ">
         <div class="header-logo md:w-1/4 xl:w-1/3 "> 
                  <?php 
@@ -27,7 +27,7 @@
                     'container_id'    => 'header-nav',  
                     'menu' => 'ul',
                     'menu_class'      => 'header-menu',
-                    'menu_id'         => 'header-menu' ,
+                    'menu_id'         => 'header-menu',
                 ));  
             ?> 
             <div class="mobile-nav-wrap" id="mobile-nav-wrap"  >
