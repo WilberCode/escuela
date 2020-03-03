@@ -30,11 +30,11 @@ const tagName = document.getElementsByTagName.bind(document)
 
 // Toggle and Menu 
 let navToggle = Id('nav-toggle')
-let nav = Id('header-nav')
+let mobileNav = Id('mobile-nav-wrap')
 
 navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('nav-toggle-active')
-  nav.classList.toggle('nav-active')
+  mobileNav.classList.toggle('nav-active')
   console.log('hola')
 
 })

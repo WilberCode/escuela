@@ -47,9 +47,12 @@
 // Search in Header
 .header-search{ 
     .search {
-        &-form {
-            position: relative;
+        &-form { 
+            @apply w-full relative;
 
+            @screen md {
+                @apply w-auto;
+             } 
             span {
                 display: none;
             }
@@ -69,40 +72,44 @@
         }
 
         &-field {
-            @apply w-full text-gray-800 hidden;
+            @apply w-full text-gray-800 shadow-none ;
             padding: .5em;
-            padding-right: 2.2em;
+            padding-right: 4.2em;
             border-radius: 4px;
             outline: none; 
             background: #ffffff;
-            margin: auto;
-            box-shadow: 0 0 0 1px #4484d8;
-            width: 200px;
+            margin: auto; 
             height: 36px;
             font-size: 16px;
-            transition: all 0.5s cubic-bezier(0, 0, 0.42, 0.96);
-
+            transition: all 0.5s cubic-bezier(0, 0, 0.42, 0.96); 
              @screen sm {
-                @apply block;
-                  
+                @apply block;  
+                box-shadow: 0 0 0 1px #4484d8; 
+             } 
+             @screen md {
+                width: 200px;
+                &:hover{ 
+                    width: 310px; 
+                }
              } 
             &::placeholder {
                 @apply text-gray-500;
             }
-            &:hover{
-                @apply w-full ; 
-                width: 310px; 
-            }
+            
         }
 
         &-submit {
-            @apply absolute bg-blue-500 z-10 opacity-100 text-blue-500 ; 
+            @apply absolute bg-blue-700 z-10 opacity-100 text-blue-700 ; 
             top: 0;
             right: 0;
             bottom: 0;
             border: none;  
             cursor: pointer;   
-        }
+            border-radius:0 4px  4px 0;
+            @screen md {
+                @apply bg-blue-500  text-blue-500;
+             } 
+        } 
     }
 }
 .search-active{ 

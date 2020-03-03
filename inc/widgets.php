@@ -86,7 +86,7 @@ function wph_theme_support() {
 
 	register_nav_menus(array(
 		'main'=>'Menu Principal',
-		'mobile'=>'Menu Movil', 
+		'mobile'=>'Menú Móvil', 
 		'footer' =>'Footer Menú',
 		'social'=>'Social Media' 
 

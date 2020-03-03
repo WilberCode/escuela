@@ -1,5 +1,5 @@
 .header{
-    @apply shadow;
+    @apply shadow relative;
     &-logo{ 
         @apply flex items-center;
         img{
@@ -7,9 +7,9 @@
         }
     }
     &-nav{
-           @apply  h-full  justify-start opacity-0 absolute; 
+           @apply  h-full  justify-start opacity-0 absolute hidden; 
            @screen lg{
-                @apply flex opacity-100 relative;
+                @apply flex opacity-100 relative block;
            }
     }
     &-menu{
@@ -52,20 +52,40 @@
     }
 }
 
+.mobile{ 
+    &-nav{
+        @apply w-full ;  
+        @screen md{
+            @apply hidden  ;
+        }
+        &-wrap{
+            @apply absolute w-full bg-blue-500 px-2 py-3 z-20 ;
+            left: 0;
+            top:45px; 
+            transform: translateY(-32em);
+            transition: all .6s cubic-bezier(0, 0.88, 1, 1);
+            opacity: 0;
+            @screen md{
+                @apply relative w-auto  px-0 py-0;
+                top:0;
+            }
+        }
+
+    }
+    &-menu{
+        li{
+            a{
+                @apply py-3 text-white block; 
+            }
+        }
+    }
+}
+
 
 // Toggle
 
-.nav {
- 
-   @media (max-width:800px)  {
-        top: 105px;
-        left: 0;
-        padding: 1.8em;
-        background: rgba(black, .95);
-        transform: translateY(-32em);
-        transition: all .6s cubic-bezier(0, 0.88, 1, 1);
-        opacity: 0;
-
+.nav {  
+    @media md{
         &-active {
             transform: translateY(0);
             opacity: 1;

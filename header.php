@@ -30,9 +30,22 @@
                     'menu_id'         => 'header-menu' ,
                 ));  
             ?> 
-            <div class="header-search flex items-center " id="header-search" > 
-                <?php get_search_form(true); ?>  
-            </div>  
+            <div class="mobile-nav-wrap" id="mobile-nav-wrap"  >
+                <div class="header-search flex items-center " id="header-search" > 
+                    <?php get_search_form(true); ?>  
+                </div>  
+                <?php  
+                wp_nav_menu(array(
+                    'theme_location'  => 'mobile',
+                    'container'       => 'nav',
+                    'container_class' => 'mobile-nav',
+                    'container_id'    => 'mobile-nav',  
+                    'menu' => 'ul',
+                    'menu_class'      => 'mobile-menu',
+                    'menu_id'         => 'mobile-menu' ,
+                ));  
+            ?> 
+            </div>
              <div class="nav-toggle-wrap block lg:hidden ">
                 <button  id="nav-toggle" class="nav-toggle focus:outline-none border-none">  
                     <span ></span> 
