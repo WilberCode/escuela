@@ -73,3 +73,15 @@ p, ul, ol, .wp-block-embed {
 code {
   @apply font-mono inline-block px-1 rounded-sm text-sm align-baseline bg-pink-100 text-pink-600;
 }
+
+.everest-forms .evf-field-container .evf-frontend-row {
+  textarea, select, button{
+
+    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight #{!important};
+    &:focus {
+      @apply border-gray-500 bg-white outline-none #{!important};
+    }
+  }
+
+  
+}

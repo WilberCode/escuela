@@ -110,3 +110,11 @@ body{
     } 
 } 
 
+
+// Form
+
+.select-wrapper{
+    input, ul{
+        display: none;
+    }
+}

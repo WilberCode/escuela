@@ -98,8 +98,9 @@
             </div>
             <div  class="w-1/3 bg-white rounded-md"> 
                <div class="px-6 py-6" >
-                    <h1  class="mb-5" >formulario de contacto</h1>
-                    <?php echo do_shortcode('[everest_form id="53"]'); ?>
+                    <h2  class="mb-5 text-base text-center " >Complete los campos
+y solicita el curso que deseas llevar</h2>
+                    <?php echo do_shortcode('[everest_form id="80"]'); ?>
                </div>
             </div>
         </div>
