@@ -7,7 +7,7 @@ html {
   @apply antialiased ;
   font-size: 15px;
   text-rendering: optimizeLegibility; 
-  @apply font-latoeg #{!important};
+  @apply font-inter #{!important};
   // scroll-behavior: smooth;
   // -webkit-font-smoothing: antialiased;
   @screen md {
@@ -19,27 +19,30 @@ html {
 // Anchors
 // =≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠
 a {
-  &, &:visited {
-    @apply text-link;
-    transition: all 0.24s ease;
-
-    &:hover,
-    &:focus {
-      @apply text-link-hover;
-    }
-
-    &:active {
-    }
-
-    // If an anchor exists inside a heading, inherit the headings color
-    $this: &;
-    @at-root h1, h2, h3, h4, h5, h6 {
-      #{$this} {
-        color: inherit;
-      }
-    }
-  }
+  @apply text-link;
+  transition: all 0.24s ease;
 }
+//   &, &:visited {
+//     @apply text-link;
+//     transition: all 0.24s ease;
+
+//     &:hover,
+//     &:focus {
+//       @apply text-link-hover;
+//     }
+
+//     &:active {
+//     }
+
+//     // If an anchor exists inside a heading, inherit the headings color
+//     $this: &;
+//     @at-root h1, h2, h3, h4, h5, h6 {
+//       #{$this} {
+//         color: inherit;
+//       }
+//     }
+//   }
+// }
 
 
 // Headings
@@ -74,14 +77,3 @@ code {
   @apply font-mono inline-block px-1 rounded-sm text-sm align-baseline bg-pink-100 text-pink-600;
 }
 
-.everest-forms .evf-field-container .evf-frontend-row {
-  textarea, select, button{
-
-    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight #{!important};
-    &:focus {
-      @apply border-gray-500 bg-white outline-none #{!important};
-    }
-  }
-
-  
-}

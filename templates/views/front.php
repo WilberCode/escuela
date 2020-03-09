@@ -43,7 +43,7 @@
                     <img class="tab__img-congress"  src="https://cdn.shortpixel.ai/client/q_glossy,ret_img/https://igc.edu.pe/wp-content/themes/igc/assets/img/inhouse-tab-bg.png"  alt="cursos in-house">                                            
  <span>In-House</span> 
  <svg class="svg__hours"><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/forms.svg#inhouse'; ?>"></svg> 
-
+2
                 </picture>
                 <h1>Capacitación a la Medida - Cursos In-House</h1>
             </a>
@@ -90,15 +90,49 @@
 <!-- End Post --> 
 
 <!-- Start Contact -->
-<div class=" bg-blue-500 mt-40"> 
-    <div class="container m-auto py-8">
-        <div class="flex">
-            <div  class="w-2/3"> 
-                <h2  class="max-w-sm text-white" >Capacítate en los Programas más requeridos en la <span class="text-2xl text-orange-400" >Gestión Pública</span> </h2>
+<div class=" bg-blue-500 mt-40 contact"> 
+    <div class="container m-auto py-8 relative z-10">
+        <div class="  lg:flex">
+            <div  class="lg:w-2/3"> 
+                <h2  class="max-w-sm text-white font-medium mt-2 " >Capacítate en los Programas más requeridos en la <span class="text-3xl text-blue-900 border-b-4 border-blue-900" >Gestión Pública</span> </h2>
+                <p  class="bg-blue-900 text-white rounded-full inline-block px-4 py-1  mt-10" >Te ofrecemos</p>
+                <ul  class="contact-list m-0" >
+                    <li>Cursos Presenciales(Certificados)</li>
+                    <li>Cursos y Diplomas en DVD(Certificados)</li>
+                    <li>Programas In-House(Certificados)</li>
+                </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4 lg:mb-0 lg:pr-4" >
+                    <div class="shadow-xl rounded overflow-hidden flex mt-4 bg-white " >
+                        <figure  class="block w-1/3 " >
+                            <img  class="h-full w-full object-cover  bg-gray-300" src="http://localhost/wordpress/escuela/wp-content/uploads/2020/03/IV-CONGRESO-DE-FINANZAS-1.jpg" alt="">
+                        </figure>
+                        <div class="p-4 w-2/3 " >
+                            <h2  class="font-normal text-base border-b border-gray-400  pb-1"  >Congresos Nacionales e Internacionales</h2>
+                            <p class="mb-1 mt-2 text-sm " > Contactenos a:</p>
+                            <div class="mb-2 " ><a class="text-sm"  href="mailto:congroso@esscuela.com" >congreso@esscuela.com</a></div>
+                            <a href="#e" class="whatsapp border-2 border-green-500 rounded-full py-2 px-5 inline-flex items-center  hover:text-white " >
+                            <svg class="w-5 h-5"  ><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#whatsapp';?>"></svg>  <p class="m-0 text-sm  "  >+51995871015</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="shadow-xl rounded overflow-hidden flex mt-4 bg-white " >
+                        <figure  class="block w-1/3 " >
+                            <img  class="h-full w-full object-cover bg-gray-300" src="http://localhost/wordpress/escuela/wp-content/uploads/2020/03/CURSO-MTRABAJO-1.png" alt="">
+                        </figure>
+                        <div class="p-4 w-2/3 " >
+                            <h2  class="font-normal text-base border-b border-gray-400  pb-1"  >Capacitación en los programas</h2>
+                            <p class="mb-1 mt-2 text-sm " > Contactenos a:</p>
+                            <div class="mb-2 " ><a class="text-sm"  href="mailto:capacitacion@esscuela.com" >capacitacion@esscuela.com</a></div>
+                            <a href="#e" class="whatsapp border-2 border-green-500 rounded-full py-2 px-5 inline-flex items-center  hover:text-white " >
+                            <svg class="w-5 h-5"  ><use href="<?php echo get_bloginfo('template_directory').'/assets/svg/icons.svg#whatsapp';?>"></svg>  <p class="m-0 text-sm  "  >+51995871015</p>
+                            </a>
+                        </div>
+                    </div> 
+                </div>
             </div>
-            <div  class="w-1/3 bg-white rounded-md"> 
-               <div class="px-6 py-6" >
-                    <h2  class="mb-5 text-base text-center " >Complete los campos
+            <div  class="  lg   :w-1/3  "> 
+               <div class="px-6 py-6 shadow-xl bg-white rounded-md" >
+                    <h2  class="mb-5  text-base text-center " >Complete los campos <br>
 y solicita el curso que deseas llevar</h2>
                     <?php echo do_shortcode('[everest_form id="80"]'); ?>
                </div>
@@ -107,6 +141,13 @@ y solicita el curso que deseas llevar</h2>
     </div>
 </div>
 <!-- End Contact -->
+<!-- Start Gallery -->
+<div class="gallery">
+    <div class="container m-auto py-4 ">
+        <h2 class="mt-6 text-center text-blue-900" >Programas desarrollas</h2>
+    </div>
+</div>
+<!-- End Gallery -->
 
 <!-- Start Gallery -->
 <div class="gallery">

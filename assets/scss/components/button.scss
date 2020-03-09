@@ -26,3 +26,10 @@
 .btn-gray:hover {
     @apply bg-gray-500;
 }
+.whatsapp{
+    border-color:#55cd6c;
+    color:#55cd6c;
+    &:hover{
+        background:#55cd6c;
+    }
+}

@@ -71,8 +71,8 @@ module.exports = {
                     '"Courier New"',
                     'monospace',
                 ],
-                latoeg: [
-                    'Lato',
+                inter: [
+                    '"Inter"',
                     'sans-serif'
                 ],
                 cooperhewitteg:'"CooperHewitt-Medium"'

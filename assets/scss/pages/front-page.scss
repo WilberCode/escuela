@@ -105,7 +105,7 @@ body{
     &-title {
         @apply mb-4;
         span{
-              @apply bg-orange-500 text-white rounded-full py-1 px-2 text-sm font-latoeg;
+              @apply bg-orange-500 text-white rounded-full py-1 px-2 text-sm font-inter;
         }
     } 
 } 
@@ -116,5 +116,57 @@ body{
 .select-wrapper{
     input, ul{
         display: none;
+    }
+}
+
+.contact{
+    margin-top: 4.5em;
+    @apply relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0; 
+        bottom:0;
+        height: 100%;
+        width: 75%;   
+        background: linear-gradient(rgba(#4299e1, 0.92),rgba(#4299e1, 0.96)),url(http://localhost/wordpress/escuela/wp-content/uploads/2020/03/capacitacion.jpg) center 40%/cover no-repeat;
+        @screen maxlg{
+            height: 60%;
+            width: 100%; 
+            right:0;
+            top:0;
+            bottom:initial;
+
+        }
+    }   
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 25%;   
+        @apply bg-gray-200;
+        @screen maxlg{
+            height: 40%;
+            width: 100%; 
+            left:0;
+            top:initial;
+            bottom:0;
+        }
+    }  
+    &-list{
+        li{
+            @apply text-white m-2;
+            &::before{ 
+                content: "\f058";  
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: #fff;
+                margin-right: 5px;
+            } 
+        }
     }
 }
