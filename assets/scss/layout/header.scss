@@ -22,9 +22,11 @@
                 @apply flex opacity-100 relative block;
            }
     }
-    &-menu{
-        @apply flex m-0 h-full relative flex-no-wrap ;
-        &>.menu-item{
+
+   
+    &-menu,ul{
+        @apply flex m-0 h-full relative flex-no-wrap ; 
+        &>.menu-item,li{
               @apply block mr-4 ;
               &:hover .sub-menu{
                   display: block;
@@ -89,8 +91,11 @@
         }
 
     }
-    &-menu{
-       
+    &-menu{ 
+        @apply block;
+        @screen lg{
+            @apply  hidden;
+        }
         li{ 
             a{
                 @apply py-3 text-white block; 

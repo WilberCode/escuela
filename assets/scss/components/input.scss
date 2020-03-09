@@ -25,6 +25,9 @@
           &:focus {
             @apply border-gray-500 bg-white outline-none #{!important};
           }
+        }
+        & select{
+            height: 45px;
         } 
     }
     .evf-submit-container {

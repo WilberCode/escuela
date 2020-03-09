@@ -130,8 +130,8 @@
                     </div> 
                 </div>
             </div>
-            <div  class="  lg   :w-1/3  "> 
-               <div class="px-6 py-6 shadow-xl bg-white rounded-md" >
+            <div  class="lg:w-1/3  "> 
+               <div class="px-6 py-6 shadow-xl bg-white rounded-md w-full h-full " >
                     <h2  class="mb-5  text-base text-center " >Complete los campos <br>
 y solicita el curso que deseas llevar</h2>
                     <?php echo do_shortcode('[everest_form id="80"]'); ?>
