@@ -170,3 +170,20 @@ body{
         }
     }
 }
+
+.gallery{
+    &-image{
+        @apply overflow-hidden rounded shadow-2xl relative; 
+        h2{
+            @apply absolute text-white text-center py-2 font-normal ;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #4299e1;
+
+        }
+        img{
+            @apply w-full;
+        }
+    }
+}

@@ -144,16 +144,19 @@ y solicita el curso que deseas llevar</h2>
 <!-- Start Gallery -->
 <div class="gallery">
     <div class="container m-auto py-4 ">
-        <h2 class="mt-6 text-center text-blue-900" >Programas desarrollas</h2>
+        <h2 class="mt-8 text-center text-blue-900" >Programas desarrollas</h2>
+        <div class="div grid grid-cols-3 gap-2 mt-3 ">
+            <div class="col-span-1">
+            <?php  dynamic_sidebar('gallery-image');?>  
+            </div>
+            <div class="col-span-2">
+                <h1>Imagenes  de galeria</h1>
+            </div>
+        </div>
     </div>
 </div>
 <!-- End Gallery -->
-
-<!-- Start Gallery -->
-<div class="gallery">
-    <h1>Galeria</h1>
-</div>
-<!-- End Gallery -->
+ 
 
 <!-- Start Clients -->
 <div class="clients">

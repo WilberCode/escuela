@@ -24,9 +24,9 @@
     }
 
    
-    &-menu,ul{
+    &-menu,& > ul{
         @apply flex m-0 h-full relative flex-no-wrap ; 
-        &>.menu-item,li{
+        &>.menu-item, & > li{
               @apply block mr-4 ;
               &:hover .sub-menu{
                   display: block;
@@ -48,14 +48,14 @@
                 }
             }
            & >.sub-menu{
-                @apply absolute bg-white z-20 overflow-hidden shadow py-2 ;
+                @apply absolute bg-white z-20 overflow-hidden shadow py-3 ;
                 border-radius:0 6px 6px 6px ; 
                 max-width: 430px;
                 top:32px; 
                 display: none;
                 li{
                     a{
-                       @apply text-black py-2 px-4 block  text-sm;
+                       @apply text-black py-2 px-6 block  text-sm;
 
                     }
                 }

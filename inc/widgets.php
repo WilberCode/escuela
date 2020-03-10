@@ -127,8 +127,14 @@ function wph_front_widgets(){
         'id' =>'footer_contact',
         'description'   => 'Contactos de la empresa',
         'before_widget' => '<div class="footer-contact">',
-        'after_widget'  => '</div>' 
- 
+        'after_widget'  => '</div>'  
+    )); 
+    register_sidebar(array(
+        'name' => __('Imagen Principal de la galeria'),
+        'id' =>'gallery-image',
+        'description'   => 'Image principal',
+        'before_widget' => '<div class="gallery-image">',
+        'after_widget'  => '</div>'  
     )); 
   
 }
