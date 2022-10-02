@@ -31,14 +31,14 @@
 }
 .socialmedia-icon-wrap {
   --tw-text-opacity: 1;
-  color: rgba(54, 59, 61, var(--tw-text-opacity));
+  color: rgba(5, 90, 129, var(--tw-text-opacity));
   text-decoration: none;
 }
 .socialmedia-icon-wrap:hover {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: var(--tw-transform);
-  --tw-shadow: 16px 16px 56px 0px rgba(var(--primary), 0.05);
+  --tw-shadow: 16px 16px 56px 0px rgba(var(--primary-rgb), 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -54,7 +54,7 @@
   width: 1.5rem;
   fill: currentColor;
   --tw-text-opacity: 1;
-  color: rgba(54, 59, 61, var(--tw-text-opacity));
+  color: rgba(5, 90, 129, var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
   .socialmedia-icon img, .socialmedia-icon svg {

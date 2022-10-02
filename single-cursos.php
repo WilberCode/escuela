@@ -17,6 +17,9 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
 
    ?>
    <style>
+      .banner{
+         background: linear-gradient(90deg, var(--bg-secondary) 0%,rgba(var(--secondary-rgb),.80) 100%);
+      }
       .banner::before{
          background: url(<?=$curso_beneficios['curso_banner_imagen']; ?>) center 40%/cover no-repeat;
 

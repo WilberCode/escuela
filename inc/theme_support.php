@@ -22,7 +22,29 @@ function wph_theme_support() {
     // Set post thumbnail size.
       set_post_thumbnail_size( 1200, 9999 );  
   
-    /*
+    
+    
+    
+	// Custom logo.
+	$logo_width  = 120;
+	$logo_height = 90;
+
+	// If the retina setting is active, double the recommended width and height.
+	if ( get_theme_mod( 'retina_logo', false ) ) {
+		$logo_width  = floor( $logo_width * 2 );
+		$logo_height = floor( $logo_height * 2 );
+	}
+
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => $logo_height,
+			'width'       => $logo_width,
+			'flex-height' => true,
+			'flex-width'  => true,
+		)
+	);
+      /*
     * Let WordPress manage the document title.
     * By adding theme support, we declare that this theme does not use a
     * hard-coded <title> tag in the document head, and expect WordPress to
@@ -144,5 +166,4 @@ function wph_menus() {
 add_action( 'init', 'wph_menus' );
 
  
-
  
