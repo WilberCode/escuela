@@ -6,15 +6,15 @@
     <div class="header-wrap "> 
       <div class="container h-full">
          <div class="h-full " id="navbar-sticky"  > 
-               <div  class="  sticky-content flex  justify-center md:justify-between items-center space-x-2   w-full h-full   " >  
-                     <div  class="flex justify-between items-center space-x-2  z-40 "  id="navbar-sticky-mobile">
+               <div  class="  sticky-content flex   justify-between items-center space-x-2   w-full h-full   " >  
+                     <div  class="flex justify-between items-center maxlg:flex-1 space-x-2  z-40 "  id="navbar-sticky-mobile">
                         <div  class="header-logo flex items-center  w-full   md:max-w-[250px] z-40  " >
                                  <?php 
                                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );?>
                                     <?php if ( has_custom_logo() ) { ?>
                                     <a href="<?php echo home_url();?>" rel="home">
-                                       <img class="  max-w-[268px]" src="<?php echo esc_url( $logo[0]);?>"
+                                       <img src="<?php echo esc_url( $logo[0]);?>"
                                              alt="<?php bloginfo('name'); ?>">
                                     </a>
                                     <?php }else{?>
@@ -22,21 +22,17 @@
                                        <?php echo  '<h1 class="text-primary-500 text-lg">'.get_bloginfo( "name" ).'</h1>'; ?>
                                     </a>
                                  <?php }?>    
-                        </div>
-                     
-                        <div class="   flex  items-center justify-center md:justify-end md:max-w-[707px] "  >
-                           <div class="hidden md:block " ><?php dynamic_sidebar('header-slogan'); ?></div>
-                           <button id="nav-toggle" class="nav-toggle btn-custom ">
-                                 <div  class="nav-toggle-iconburger" id="nav-toggle-iconburger">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                 </div>
-                           </button>
                         </div> 
+                        <button id="nav-toggle" class="nav-toggle btn-custom ">
+                              <div  class="nav-toggle-iconburger" id="nav-toggle-iconburger">
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                              </div>
+                        </button> 
                   </div>
                   <?php  
                      wp_nav_menu(array(

@@ -13,7 +13,7 @@
                   <a class=" hover:underline" href="<?=$home_url; ?>" rel="home">Home</a> <span class="" >❯</span> 
                   <a class=" hover:underline" href="<?=$home_url?>/blog" >Blog</a>  
             </div>
-               <h1  class="lg:text-[49.31px]  leading-tight text-primary-500 pt-3 pb-6  " > <?php the_title();?>  </h1>
+               <h1  class="lg:text-[49.31px]  leading-tight  pt-3 pb-6  " > <?php the_title();?>  </h1>
               <div class="blog-post" > 
                  
                   <?php
@@ -78,7 +78,7 @@
                                                             </figure>  
                                                             <div  class=" flex flex-col px-6 py-4 gap-2 h-full  ">
                                                                <div  class=" " >
-                                                                     <h2  class="text-h6"> <?=get_the_title()?></h2>  
+                                                                     <h2  class="text-h5"> <?=get_the_title()?></h2>  
                                                                </div>
                                                                <div  class="flex flex-col justify-between gap-2    mt-auto "> 
                                                                      <div class="inline-flex   items-center gap-2" >

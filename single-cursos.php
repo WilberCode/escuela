@@ -5,15 +5,15 @@ $page = get_post_type();
 $page_url = $home_url."/".$page; 
 $bg_current = "#5e2fff";  
 
-$curso_beneficios = get_field('curso_banner','option');   
+$curso_banner = get_field('curso_banner','option');   
 
 $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
 
 ?> 
 
-<?php if($curso_beneficios){
+<?php if($curso_banner){
     
-    $bg_current  = $curso_beneficios['curso_banner_color'];
+    $bg_current  = $curso_banner['curso_banner_color'];
 
    ?>
    <style>
@@ -21,7 +21,7 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
          background: linear-gradient(90deg, var(--bg-secondary) 0%,rgba(var(--secondary-rgb),.80) 100%);
       }
       .banner::before{
-         background: url(<?=$curso_beneficios['curso_banner_imagen']; ?>) center 40%/cover no-repeat;
+         background: url(<?=$curso_banner['curso_banner_imagen']; ?>) center 40%/cover no-repeat;
 
       }
    </style>
@@ -59,7 +59,7 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                            <a class="text-white text-opacity-50 hover:underline" href="<?php  echo $home_url;?>" rel="home">Home</a> <span class="text-white text-opacity-50" >❯</span> 
                            <a class="text-white  hover:underline" href="<?php echo $page_url;?>" ><?php echo ucfirst($page);?></a>  
                      </div>
-                    <h1  class="text-white text-4xl  mt-7 max-w-lg " ><?php the_title(); ?> </h1> 
+                    <h1  class="text-white text-4xl  mt-7 max-w-[568px] " ><?php the_title(); ?> </h1> 
                      <?php 
                      if(have_posts()):  
                               while ( have_posts()): the_post(); ?> 
@@ -208,7 +208,10 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                                                                <div class="collapsible-header__title"><h5>Sesión <?=$counter;?></h5> <h6><?=$curso_sesion['curso_sesiones_lista_titulo'];  ?></h6></div> 
                                                                <div class="collapsible-header__down" > <span  ><svg><use href="<?=$path_icon;?>#down"></svg></span> </div> 
                                                           </div>
-                                                         <div class="collapsible-body"><?=$curso_sesion['curso_sesiones_lista_descripcion'];  ?> </div>
+                                                          <?php if($curso_sesion['curso_sesiones_lista_descripcion']){?>
+                                                            <div class="collapsible-body"><?=$curso_sesion['curso_sesiones_lista_descripcion'];  ?> </div>
+                                                          <?php } ?>
+                                                        
                                                    </li>
                                     <?php   
                                        $counter++;  
@@ -223,6 +226,17 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
 
 
                <?php } ?> 
+
+               <!-- Certificado -->           
+
+               <?php
+               $curso_certificado = get_field('curso_certificado','option');
+               if( $curso_certificado ){ ?>  
+                  <section class="section editor">
+                     <h2 >Certificación</h2> 
+                     <?=$curso_certificado;?>
+                  </section> 
+              <?php }?>  
 
                <!-- Beneficios -->                      
 
@@ -394,7 +408,7 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                                              $curso_inversion_precio_ahorro = ($curso_inversion_precio_normal - $curso_inversion_precio_rebajado);
                                              $curso_inversion_precio_descuento_porcentaje = round(100/($curso_inversion_precio_normal / $curso_inversion_precio_ahorro));  
                                              ?> 
-                                             <svg  class="w-12 h-12 absolute right-[-52px] top-0 text-white fill-current    "><use href="<?=$path_icon;?>#sales"></svg>
+                                             <svg  class=" investment-price-discount--icon "><use href="<?=$path_icon;?>#sales"></svg>
 
                                              <div class="investment-price-info">
                                                 <div class="investment-price-normal ">Normal: <span>S/.<?=$curso_inversion_precio_normal; ?></span> </div>

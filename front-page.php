@@ -5,7 +5,10 @@ Template Name: Front Page
 Template Post Type: post, page, event
 */ 
 
-get_header();?>
+get_header();
+
+$home_url = home_url();
+?>
 <style>
    :root{
       --bg-current:var(--bg-primary);
@@ -31,7 +34,7 @@ get_header();?>
  
   <?php endwhile; endif; ?> 
   
-<section  class="bg-white     z-20 menutabs  mb-2"  id="menutabs">
+<section  class="bg-white     z-20 menutabs  mb-2 "  id="menutabs">
    <div class="container maxsm:px-1 ">
       <ul  class="grid grid-cols-4  gap-1 sm:gap-6 py-6 ">
          <?php 
@@ -68,7 +71,9 @@ get_header();?>
 </section>
 <main  class="flex-1 bg-layout" id="main">   
  
-    <?php if( have_rows('home_programas') ): ?> 
+    <?php
+    $counter_program = 1;
+    if( have_rows('home_programas') ): ?> 
 
       <?php while( have_rows('home_programas') ): the_row();  ?>
          <?php $home_programas_programa =  get_sub_field('home_programas_programa'); 
@@ -91,10 +96,17 @@ get_header();?>
             
                      
                      <?php echo do_shortcode('['.$home_programas_programa_nombre.' programa="'.$home_programas_programa_nombre.'" cantidad="'.$home_programas_programa_cantidad.'"]'); ?>
-               <?php endif;?> 
+                  <?php endif;?> 
                   </div>
+
+                  <?php   
+                  if($home_programas_programa_cantidad >= 6):   ?>
+                     <div  class="text-center pt-6 sm:pt-10 mb-0 "><a class="btn" href="<?=$home_url;?>/<?=$home_programas_programa_nombre; ?>">Ver más <?php echo get_sub_field('home_programas_titulo'); ?></a></div>
+                  <?php 
+                     $counter_program++; 
+                  endif;?>
          </section>
-            <?php endwhile; ?> 
+      <?php endwhile; ?> 
    <?php endif; ?>
          
  
@@ -155,79 +167,6 @@ get_header();?>
                <?php  }
             
             }  ?> 
-      </div>
-   </section>
-   <section class="bg-layout layout  "  >
-      <div class="container"> 
-         <div class="layout-heading">
-               <h2>Ubicación</h2>  
-               <p>Donde nos encuentras / Contactos </p>
-         </div> 
-
-         <div class="cardfull "   >
-            <div class=" cardfull-left "  >
-               <div>
-
-               <?php  
-                      $contactos =  get_field('contactos','option');
-                     ?> 
-              
-                  <?php if(!empty( $contactos )){ ?>  
-                     <?php 
-                              if($contactos){
-                                 foreach( $contactos as $contacto ) {   ?> 
-                                   
-                                       <h4> <?=$contacto['contactos_titulo'];?></h4>
-                                       <?php  
-                                       $contactos_info = $contacto['contactos_info'];
-                                    
-                                       if($contactos_info){ ?>   
-                                          <?php  foreach( $contactos_info as $contactos_info_single ) {  
-                                             $tag = '';
-                                             $tag_close='';
-                                             if($contactos_info_single['contactos_info_enlace_activo']){ 
-                                                $tag = '<a href="'.$contactos_info_single['contactos_info_enlace'].'">  ';
-                                                $tag_close = '</a>';
-                                             } else{
-                                                $tag = '<div>';
-                                                $tag_close  = '</div>';
-                                             }?> 
-                                             <?=$tag;?>
-                                                   <address class="contactinfo-data">
-                                                      <div  class="contactinfo-icon-wrap" >  
-                                                            <div  class="contactinfo-icon !bg-secondary-500">
-                                                               <?php if( $contactos_info_single['contactos_info_icono']){?>
-                                                                  <img class="style-svg" src="<?=$contactos_info_single['contactos_info_icono'] ?>"> 
-                                                               <?php }else{?>
-                                                                  <span class="text-white">➤</span>
-                                                               <?php }?>
-                                                            </div>  
-                                                      </div>
-                                                      <div class="contactinfo-content" >  
-                                                            <h5 class="contactinfo-content-name"><?=$contactos_info_single['contactos_info_nombre'] ?></h5> 
-                                                            <p class="contactinfo-content-description"><?=$contactos_info_single['contactos_info_descripcion'] ?></p> 
-                                                      </div> 
-                                                   </address>   
-                                           <?=$tag_close;?>
-                                             <?php    
-                                          }  ?>    
-                                       <?php }?>   
-                                    <?php    
-                                 }    
-                              }
-                              ?>   
-                  <?php }?>  
-               </div>
-
-         
-            </div>  
-            <div  class="cardfull-right  " >  
-                  <iframe  class="rounded-card h-[200px] md:h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31215.258138954992!2d-77.06506115899901!3d-12.049901133777647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9f33e6334c3%3A0x8703fdb409aa8654!2sInstituto%20de%20Gerencia%20Intercontinental!5e0!3m2!1ses-419!2spe!4v1662840778597!5m2!1ses-419!2spe" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-               
-                  
-            </div>
-         </div>    
-
       </div>
    </section>
 

@@ -108,35 +108,15 @@ function wph_theme_support() {
         'editor-color-palette',
         array(
             array(
-                'name'  => esc_html__( 'Primer Color', 'solidaconstruccion' ),
+                'name'  => esc_html__( 'Primer Color', 'escuela' ),
                 'slug'  => 'primary',
-                'color' => '#363b3d',
+                'color' => '#0792A8',
             ),
             array(
-                'name'  => esc_html__( 'Segundo Color', 'solidaconstruccion' ),
+                'name'  => esc_html__( 'Segundo Color', 'escuela' ),
                 'slug'  => 'secondary',
-                'color' => '#00b703',
-            ),
-            array(
-                'name'  => esc_html__( 'Diseño', 'solidaconstruccion' ),
-                'slug'  => 'tertiary',
-                'color' => '#4ab0ae',
-            ),
-            array(
-                'name'  => esc_html__( 'Construcción', 'solidaconstruccion' ),
-                'slug'  => 'quaternary',
-                'color' => '#51b04a',
-            ),
-            array(
-                'name'  => esc_html__( 'Arquitectura', 'solidaconstruccion' ),
-                'slug'  => 'quinary',
-                'color' => '#e6d759',
-            ),
-            array(
-                'name'  => esc_html__( 'Asesoría legal', 'solidaconstruccion' ),
-                'slug'  => 'senary',
-                'color' => '#ff9638',
-            ) 
+                'color' => '#055A81',
+            )
              
         )
     );
