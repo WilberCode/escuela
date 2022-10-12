@@ -7,16 +7,20 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title><?= wp_get_document_title() ?></title>  
     <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
-     <meta name="keywords" content="solida construccion,diseño de casa, construcción de casa,
-      arquitectura para pasa, asesoria legal, diseño de hoga, construcción,Steel Frame y Drywall,
-      Albañilería Confinada, Aporticado de Concreto Armado, Casa Residencial, Casa Multifamiliar
-      Casa De Campo, Casa De Campo, Casa De Playa, decoración de casa, casa Minimalista, Casa Étnico, 
-      casa Clásico, casa Nórdico, casa Industrial, casa Wabi Sabi, hogar Japonés, casa Biofílico"> 
+     <meta name="keywords" content="Escuela de gerencia y gestion, capacitacion, especializacion, programas, cursos, diplomas, in-house,congresos, congresos de secretarias, gestion publica, finanzas publicas, presupuesto publico"> 
     
   
     <?php wp_head(); ?> 
   
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K82MHCV6P"></script>
+   <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
 
+   gtag('config', 'G-6K82MHCV6P');
+   </script>
  
 </head>
 <body <?php body_class();  ?>  > 
