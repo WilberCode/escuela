@@ -110,7 +110,8 @@ $home_url = home_url();
    <?php endif; ?>
          
  
-   </main> 
+   </main>  
+
    <section class="bg-layout layout " id="in-house"  >
       <div class="container"> 
       <?php if( have_rows('home_in_house') ): ?>

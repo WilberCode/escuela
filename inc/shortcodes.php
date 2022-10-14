@@ -334,7 +334,7 @@ function get_congresos($atts){
 	'post_type' => $atts['programa'],
 	'orderby' => 'date',
 	'order' => 'desc',
-   'post_status' => 'publish',
+   'post_status' => array('publish', 'draft'),
 	'posts_per_page' => $atts['cantidad'],
 	);
 	$post_service  = '';
@@ -422,14 +422,22 @@ function get_congresos($atts){
          // Fecha de inicio  
          $congreso_inicio = get_field('congreso_inicio')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#calendar"></svg> <span class="card-info__attribute" >Fecha de Inicio: </span><span  class="card-info__value">'.get_field('congreso_inicio').'</span> </div>':'';
          $congreso_certificacion = get_field('congreso_certificacion')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#diplomas"></svg> <span class="card-info__attribute" >Certificación: </span><span  class="card-info__value"> '.get_field('congreso_certificacion').'</span> </div>':'';
-         
+
+         $post_status =  ' <div  class="card-mode-live bg-red" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#live"></svg> <span> en vivo </span> </div> ';
+         if (get_post_status()=='draft') {
+            $post_status =  '<div  class="card-mode-live bg-secondary" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#check"></svg> <span>Realizado</span> </div> ';
+
+         }
+
+
+
          $post_service =  ' <a class="card" href="'.get_the_permalink().'" >
                               '.$congreso_thumbnail.'
                            <div  class=" card-body" > 
                               <div class=" card-mode" >
                                  <span class="card-mode__type" > '.ucfirst($post_type_singular).' </span> 
-                                 <div  class="card-mode-live bg-red" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#live"></svg> <span> en vivo </span> </div> 
-                              </div>
+                                 '.$post_status.'
+                               </div>
                               <h3 class="card__title card__title-congreso "> '.get_the_title().' </h3>  
                               <div>
                                  '. $congreso_inicio.'
@@ -466,151 +474,7 @@ add_shortcode ('congresos','get_congresos');
 
 
 
-
-/* List only draft post of Congresos  */
-
-function get_congresos_realizados($atts){ 
-	
-	global $post; 
-
-	$atts = shortcode_atts(
-		array(
-			'programa' => 'congresos',   
-			'cantidad' => -1,    
-		), $atts, 'congresos' );
-
-
-	$post_result = ''; 
-   
  
-	$args = array(
-	'post_type' => $atts['programa'],
-	'orderby' => 'date',
-	'order' => 'desc',
-   'post_status' => 'draft',
-	'posts_per_page' => $atts['cantidad'],
-	);
-	$post_service  = '';
-	$listing = new WP_query($args);
-	$html_links =  '';
-	$html_links_wrap = '';
-	$html_links_loop  = '';
-
-
-   $congreso_inversion_precio_normal = null;
-   $congreso_inversion_precio_rebajado = null;
-   $congreso_inversion_precio_descuento_porcentaje  = null;
-   $congreso_inversion_precio_promocion = null; 
-   $congreso_inversion_precio_html = '';
-
-	if ($listing->have_posts()) : 
-		while ($listing->have_posts()) : $listing->the_post();  
-      
-         if(!empty(get_field('congreso_inversion')['congreso_inversion_precio_normal'])){ 
-            if( have_rows('congreso_inversion') ){
-               while( have_rows('congreso_inversion') ){
-                  the_row();  
-
-                  $congreso_inversion_precio_normal = get_sub_field('congreso_inversion_precio_normal');
-                  $congreso_inversion_precio_rebajado = get_sub_field('congreso_inversion_precio_rebajado');
-                  $congreso_inversion_precio_promocion = get_sub_field('congreso_inversion_precio_promocion'); 
-
-
-
-                  $valid_promotion = false;
-                  $field_date_time = false;
-                  try {
-                     $field_date_time = new DateTime($congreso_inversion_precio_promocion); 
-                  } catch (Exception $e) {
-                     error_log($e);
-                  } 
-                  $current_date = new DateTime(); 
-                 
-                  if ($current_date != false) {
-                     if(!($current_date> $field_date_time)){  
-                        $valid_promotion = true;
-                     }
-                  }
-
-                  if ($congreso_inversion_precio_rebajado && $valid_promotion  || (empty($congreso_inversion_precio_promocion) && !empty($congreso_inversion_precio_rebajado ))){
-
-                     $congreso_inversion_precio_ahorro = ($congreso_inversion_precio_normal - $congreso_inversion_precio_rebajado);
-                     $congreso_inversion_precio_descuento_porcentaje = round(100/($congreso_inversion_precio_normal / $congreso_inversion_precio_ahorro)); 
-                     
-                     $congreso_inversion_precio_html = ' <div class="investment-price-info" >
-                                                         <div class="investment-price-normal ">Normal: <span>'.$congreso_inversion_precio_normal.'</span> </div>
-                                                         <span class="investment-price-discount bg-secondary" >'.$congreso_inversion_precio_descuento_porcentaje.'% Descuento</span>
-                                                      </div>
-                                                      <var  class="investment-price-current ">S/.'.$congreso_inversion_precio_rebajado.'</var>'; 
-                  }else{   
-                     $congreso_inversion_precio_html =  ' <div class="investment-price-normal ">Precio: </div>   <var  class="investment-price-current ">S/.'.$congreso_inversion_precio_normal.'</var>';
-                     
-               
-                  }
-                  $congreso_inversion_precio_html = ' <div  class="investment-price investment-price-wrap" >
-                                                         '.$congreso_inversion_precio_html.'
-                                                   </div>  ';
-                  
-            
-               }
-            }else{
-               $congreso_inversion_precio_html ='';
-            }
-         }else{
-            $congreso_inversion_precio_html ='';
-         }
-
-   
-         $url_image = thumbnail_image_url('programa-thumbnail');  
-         if ($url_image) { 
-            $congreso_thumbnail =  '<img  src="'.$url_image.'" alt="'.get_the_title().'">   ';
-         } else {
-            $congreso_thumbnail  = '<img class="h-[273px]"  src="'.get_template_directory_uri().'/build/img/programa-thumbnail-default.png" alt="'.get_the_title().'"> ';
-            
-         }   
-
-         $post_type_plural = get_post_type();
-         $post_type_singular =  substr($post_type_plural, -1) == 's'?substr($post_type_plural,0, -1):$post_type_plural;  
-
-         // Fecha de inicio  
-         $congreso_inicio = get_field('congreso_inicio')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#calendar"></svg> <span class="card-info__attribute" >Fecha de Inicio: </span><span  class="card-info__value">'.get_field('congreso_inicio').'</span> </div>':'';
-         $congreso_certificacion = get_field('congreso_certificacion')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#diplomas"></svg> <span class="card-info__attribute" >Certificación: </span><span  class="card-info__value"> '.get_field('congreso_certificacion').'</span> </div>':'';
-         
-         $post_service =  ' <div class="card !transform-none "   >
-                              '.$congreso_thumbnail.'
-                           <div  class=" card-body" > 
-                              <div class=" card-mode" >
-                                 <span class="card-mode__type" > '.ucfirst($post_type_singular).' </span> 
-                                 <div  class="card-mode-live bg-secondary" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#check"></svg> <span>Realizado</span> </div> 
-                              </div>
-                              <h3 class="card__title !h-auto !block !max-h-[none] "> '.get_the_title().' </h3>  
-                              <div>
-                                 '. $congreso_inicio.'
-                                 '. $congreso_certificacion.'
-                                 
-                              </div> 
-                           </div>
-                           
-                        </div>     ' ;
-         $post_result .=  '<article  class="card-wrap" >      
-						'.$post_service.'   
-						</article> '; 
-	    endwhile;
-	endif; 
-	  
-   
-	$post_result_html = '  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[15px] lg:gap-x-[40px] gap-y-[20px] md:gap-y-[40px] place-content-center   "> 
-                           '.$post_result.'
-                           </div>   ';
-	// reset the query 
-	wp_reset_postdata(); 
-	return $post_result_html;
-	
-    
-
-}
-
-add_shortcode ('congresos_realizados','get_congresos_realizados'); 
   
 
  
