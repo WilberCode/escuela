@@ -59,10 +59,10 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                             if (get_field('congreso_estado') ){ ?>  
                               <div  class="card-mode-live bg-red" ><svg><use href="<?=$path_icon;?>#live"></svg> <span> En vivo </span> </div>  
                            <?php }else{  ?>
-                                 <div  class="card-mode-live bg-secondary" ><svg><use href="<?=$path_icon;?>#check"></svg> <span>Realizado</span> </div> 
+                                 <div  class="card-mode-live !bg-black !bg-opacity-30" ><svg><use href="<?=$path_icon;?>#check"></svg> <span>Realizado</span> </div> 
                            <?php } ?>
                      </div>
-                    <h1  class="text-white text-4xl  mt-7 max-w-lg " ><?php the_title(); ?> </h1> 
+                    <h1  class="text-white text-4xl  mt-7 max-w-[47rem] " ><?php the_title(); ?> </h1> 
                      <?php 
                      if(have_posts()):  
                               while ( have_posts()): the_post(); ?> 
