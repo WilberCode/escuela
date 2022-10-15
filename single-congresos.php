@@ -55,6 +55,12 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                            <div><span  class="w-10 h-10 rounded-12 bg-black bg-opacity-30 flex justify-center items-center " ><svg class="w-6 h-6 text-white fill-current" ><use href="<?php echo get_bloginfo('template_directory').'/build/svg/icons.svg#congresos';?>"></svg></span></div>
                            <a class="text-white text-opacity-50 hover:underline" href="<?php  echo $home_url;?>" rel="home">Home</a> <span class="text-white text-opacity-50" >❯</span> 
                            <a class="text-white  hover:underline" href="<?php echo $page_url;?>" ><?php echo ucfirst($page);?></a>  
+                           <?php 
+                            if (get_field('congreso_estado') ){ ?>  
+                              <div  class="card-mode-live bg-red" ><svg><use href="<?=$path_icon;?>#live"></svg> <span> En vivo </span> </div>  
+                           <?php }else{  ?>
+                                 <div  class="card-mode-live bg-secondary" ><svg><use href="<?=$path_icon;?>#check"></svg> <span>Realizado</span> </div> 
+                           <?php } ?>
                      </div>
                     <h1  class="text-white text-4xl  mt-7 max-w-lg " ><?php the_title(); ?> </h1> 
                      <?php 
@@ -185,13 +191,16 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
             </ul>
 
             <!-- Temario -->   
-            <?php
+            <?php 
                $congreso_temario = get_field('congreso_temario'); 
-               if(  !empty($congreso_temario['congreso_sesiones_lista'])  ){ ?>  
+               if(  !empty($congreso_temario['congreso_sesiones_lista']) || !empty($congreso_temario['congreso_brochure']) ){ ?>  
                     <section class="section">
                         <div   id="temario" class=" temario  " > 
                                  <h2>Temario</h2>
                                  <?php 
+
+
+
                                   $congreso_brochure =  $congreso_temario['congreso_brochure'];
                                  if($congreso_brochure){  
 

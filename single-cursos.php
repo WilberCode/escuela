@@ -57,7 +57,8 @@ $path_icon = get_bloginfo('template_directory').'/build/svg/icons.svg';
                            <?php   ?>
                            <div><span  class="w-10 h-10 rounded-12 bg-black bg-opacity-30 flex justify-center items-center " ><svg class="w-6 h-6 text-white fill-current" ><use href="<?php echo get_bloginfo('template_directory').'/build/svg/icons.svg#cursos';?>"></svg></span></div>
                            <a class="text-white text-opacity-50 hover:underline" href="<?php  echo $home_url;?>" rel="home">Home</a> <span class="text-white text-opacity-50" >❯</span> 
-                           <a class="text-white  hover:underline" href="<?php echo $page_url;?>" ><?php echo ucfirst($page);?></a>  
+                           <a class="text-white  hover:underline" href="<?php echo $page_url;?>" ><?php echo ucfirst($page);?></a>
+                           <div  class="card-mode-live bg-red" ><svg><use href="<?=$path_icon;?>#live"></svg> <span> En vivo </span> </div>    
                      </div>
                     <h1  class="text-white text-4xl  mt-7 max-w-[568px] " ><?php the_title(); ?> </h1> 
                      <?php 

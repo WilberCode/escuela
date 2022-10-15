@@ -328,13 +328,18 @@ function get_congresos($atts){
 
 
 	$post_result = ''; 
-   
+   $post_status =null;
+  if(current_user_can('administrator')){
+      $post_status = array('publish', 'draft','private');
+  }else{
+      $post_status = array('publish', 'draft');
+  }
  
 	$args = array(
 	'post_type' => $atts['programa'],
 	'orderby' => 'date',
 	'order' => 'desc',
-   'post_status' => array('publish', 'draft'),
+   'post_status' =>  $post_status,
 	'posts_per_page' => $atts['cantidad'],
 	);
 	$post_service  = '';
@@ -349,6 +354,7 @@ function get_congresos($atts){
    $congreso_inversion_precio_descuento_porcentaje  = null;
    $congreso_inversion_precio_promocion = null; 
    $congreso_inversion_precio_html = '';
+   $congreso_estado = '';
 
 	if ($listing->have_posts()) : 
 		while ($listing->have_posts()) : $listing->the_post();  
@@ -422,21 +428,30 @@ function get_congresos($atts){
          // Fecha de inicio  
          $congreso_inicio = get_field('congreso_inicio')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#calendar"></svg> <span class="card-info__attribute" >Fecha de Inicio: </span><span  class="card-info__value">'.get_field('congreso_inicio').'</span> </div>':'';
          $congreso_certificacion = get_field('congreso_certificacion')?'<div  class="card-info" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#diplomas"></svg> <span class="card-info__attribute" >Certificación: </span><span  class="card-info__value"> '.get_field('congreso_certificacion').'</span> </div>':'';
+     
+         
+         if (get_field('congreso_estado')){ 
+            $congreso_estado =  ' <div  class="card-mode-live bg-red" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#live"></svg> <span> En vivo </span> </div> ';
+         }else{
+            $congreso_estado =  '<div  class="card-mode-live bg-secondary" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#check"></svg> <span>Realizado</span> </div> ';
 
-         $post_status =  ' <div  class="card-mode-live bg-red" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#live"></svg> <span> en vivo </span> </div> ';
-         if (get_post_status()=='draft') {
-            $post_status =  '<div  class="card-mode-live bg-secondary" ><svg><use href="'.get_bloginfo('template_directory').'/build/svg/icons.svg#check"></svg> <span>Realizado</span> </div> ';
-
+         } 
+         $tag_start ='';
+         $tag_end ='';
+         if (get_post_status()=='draft') { 
+            $tag_start = '<div class="card">';
+            $tag_end = '</div>';
+         }else{
+            $tag_start = '<a class="card" href="'.get_the_permalink().'" >';
+            $tag_end = '</a>';
          }
 
-
-
-         $post_service =  ' <a class="card" href="'.get_the_permalink().'" >
+         $post_service =  ' '.$tag_start.'
                               '.$congreso_thumbnail.'
-                           <div  class=" card-body" > 
+                           <div  class=" card-body" >  
                               <div class=" card-mode" >
                                  <span class="card-mode__type" > '.ucfirst($post_type_singular).' </span> 
-                                 '.$post_status.'
+                                 '.$congreso_estado.'
                                </div>
                               <h3 class="card__title card__title-congreso "> '.get_the_title().' </h3>  
                               <div>
@@ -450,7 +465,7 @@ function get_congresos($atts){
                               </div>
                            </div>
                            
-                        </a>     ' ;
+                        '.$tag_end .'' ;
          $post_result .=  '<article  class="card-wrap" >      
 						'.$post_service.'   
 						</article> '; 
