@@ -2,7 +2,7 @@
 get_header(); ?>
 <?php 
 get_header();?>
- <div class="404 layout bg-layout flex-1  "> 
+ <div class="404 layout bg-white flex-1  "> 
    <div class="container">
     <div class="text-center py-10 ">
             <h1 class="sm:text-2xl ">¡Oops!... Página no encontrada</h1>
