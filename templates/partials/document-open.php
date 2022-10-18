@@ -15,11 +15,13 @@
    <!-- Google tag (gtag.js) -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K82MHCV6P"></script>
    <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
+       setTimeout(function(){ 
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
 
-   gtag('config', 'G-6K82MHCV6P');
+         gtag('config', 'G-6K82MHCV6P');
+      },3000);
    </script>
  
 </head>
