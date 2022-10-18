@@ -162,3 +162,13 @@ function wph_excerpt_more( $more ) {
 	return '...<span>Leer más.</span> ';
 }
 add_filter( 'excerpt_more', 'wph_excerpt_more' );
+
+
+
+add_action( 'wp_enqueue_scripts', 'aiooc_crunchify_dequeue_dashicon' );
+function aiooc_crunchify_dequeue_dashicon() {
+    if ( current_user_can( 'update_core' ) ) {
+        return;
+    }
+    wp_deregister_style( 'dashicons' );
+}
